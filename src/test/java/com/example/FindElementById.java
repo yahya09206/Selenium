@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class FindElementById {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         //open chrome and navigate to yahoo
         WebDriverManager.chromedriver().setup();
