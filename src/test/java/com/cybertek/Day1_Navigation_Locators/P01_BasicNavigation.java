@@ -22,5 +22,8 @@ public class P01_BasicNavigation {
             - navigate().refresh()
         *
         * */
+
+        //navigate().to("url")
+        driver.navigate().to("https://google.com");
     }
 }
