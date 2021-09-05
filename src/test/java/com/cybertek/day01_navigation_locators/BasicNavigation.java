@@ -12,6 +12,6 @@ public class BasicNavigation {
         // create chromedriver object
         WebDriver driver = new ChromeDriver();
         // navigate to https://yahoo.com
-
+        driver.get("https://yahoo.com");
     }
 }
