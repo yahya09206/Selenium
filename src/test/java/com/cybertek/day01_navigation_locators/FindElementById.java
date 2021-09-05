@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class FindElementById {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         // set up chrome driver using web driver manager
         WebDriverManager.chromedriver().setup();
@@ -21,6 +21,8 @@ public class FindElementById {
         // enter text inside inputbox element using sendkey("your text")
         searchBox.sendKeys("Selenium");
         // locate the search button and click submit
+
+        Thread.sleep(5000);
 
 
     }
