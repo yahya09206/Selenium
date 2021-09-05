@@ -28,11 +28,14 @@ public class BasicNavigation {
         driver.navigate().back();
         // navigate().forward()
         driver.navigate().forward();
+        // navigate().refresh()
+        driver.navigate().refresh();
 
         // closing browser
         // close() method, will close current tab
         // quit() method, will close all tabs if there is more than one
-        driver.close();
+        //driver.close();
+        driver.quit();
 
     }
 }
