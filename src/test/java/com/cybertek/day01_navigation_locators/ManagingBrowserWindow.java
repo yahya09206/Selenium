@@ -12,9 +12,8 @@ public class ManagingBrowserWindow {
         // create chrome driver object
         WebDriver driver = new ChromeDriver();
 
-
         // maximize the browser window
-
+        driver.manage().window().maximize();
         // make the browser window full screen
 
         // quit the browser
