@@ -8,6 +8,7 @@ public class P01_BasicNavigation {
     public static void main(String[] args) {
         //Set up chrome and create Webdrive instance
         WebDriverManager.chromedriver().setup();
+        //Create chrome driver object
         WebDriver driver = new ChromeDriver();
 
         //driver.get(url)
