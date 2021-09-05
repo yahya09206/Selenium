@@ -14,7 +14,7 @@ public class FindElementByLinkText {
         driver.get("https://google.com");
 
         // identify search box using both name and id
-        WebElement searchBox = driver.findElement(By.id("q"));
+        WebElement searchBox = driver.findElement(By.name("q"));
                 searchBox.sendKeys("Everything is awesome");
         // submit the search by clicking on the search button
         WebElement searchBtn = driver.findElement(By.name("btnK"));
