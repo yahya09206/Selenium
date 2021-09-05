@@ -26,6 +26,8 @@ public class BasicNavigation {
         driver.navigate().to("https://google.com");
         // navigate().back()
         driver.navigate().back();
+        // navigate().forward()
+        driver.navigate().forward();
 
     }
 }
