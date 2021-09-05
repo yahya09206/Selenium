@@ -21,8 +21,9 @@ public class FindElementById {
         // enter text inside input box element using sendkey("your text")
         searchBox.sendKeys("Selenium");
         // locate the search button and click submit
-        WebElement searchBtn = driver.findElement(By.id("ybar.search"));
-        searchBtn.click();
+        WebElement searchBtn = driver.findElement(By.id("ybar-search"));
+        //searchBtn.click();
+        searchBtn.submit();
 
         Thread.sleep(5000);
 
