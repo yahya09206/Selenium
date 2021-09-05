@@ -14,5 +14,8 @@ public class SeleniumDryRun {
         //2. create webdriver instance using chrome driver object
         WebDriver drive = new ChromeDriver();
 
+        //3. navigate to google.com
+        drive.get("https://google.com");
+
     }
 }
