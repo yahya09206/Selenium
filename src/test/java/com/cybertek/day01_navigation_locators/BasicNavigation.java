@@ -9,9 +9,19 @@ public class BasicNavigation {
 
         //set up chrome driver
         WebDriverManager.chromedriver().setup();
-        // create chromedriver object
+        // create chrome driver object
         WebDriver driver = new ChromeDriver();
         // navigate to https://yahoo.com
         driver.get("https://yahoo.com");
+
+        /* navigate using
+            - get("url")
+            - navigate().to("url")
+            - navigate().back()
+            - navigate().forward()
+            - navigate().refresh()
+        *
+        * */
+        driver.navigate().to("https://google.com");
     }
 }
