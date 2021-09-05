@@ -19,6 +19,11 @@ public class FindElementByName {
         WebElement searchBox = driver.findElement(By.name("p"));
         searchBox.sendKeys("Selenium");
 
+        // locate and click on button
+        WebElement searchBtn = driver.findElement(By.id("ybar-search"));
+        // any button can be clicked
+        // only the buttons to submit the form can use submit method
+        searchBtn.submit();
 
         // close browser
         driver.quit();
