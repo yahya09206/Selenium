@@ -14,8 +14,10 @@ public class ManagingBrowserWindow {
 
         // maximize the browser window
         driver.manage().window().maximize();
-        // make the browser window full screen
+        // make the browser window  full screen
+        driver.manage().window().fullscreen();
 
         // quit the browser
+        driver.quit();
     }
 }
