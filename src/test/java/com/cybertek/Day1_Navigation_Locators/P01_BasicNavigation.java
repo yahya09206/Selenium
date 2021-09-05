@@ -13,9 +13,14 @@ public class P01_BasicNavigation {
 
         //driver.get(url)
         driver.get("https://google.com");
-        //driver.navigate.back()
-        driver.navigate().back();
-        //drive.navigate.refresh
-        driver.navigate().refresh();
+
+        /* navigate using
+            - get("url")
+            - navigate().to("url")
+            - navigate().back()
+            - navigate().forward()
+            - navigate().refresh()
+        *
+        * */
     }
 }
