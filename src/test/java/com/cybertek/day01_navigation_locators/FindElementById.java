@@ -22,6 +22,7 @@ public class FindElementById {
         searchBox.sendKeys("Selenium");
         // locate the search button and click submit
         WebElement searchBtn = driver.findElement(By.id("ybar.search"));
+        searchBtn.click();
 
         Thread.sleep(5000);
 
