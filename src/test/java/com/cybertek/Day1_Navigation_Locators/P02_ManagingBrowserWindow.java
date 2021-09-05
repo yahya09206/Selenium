@@ -1,4 +1,4 @@
-package com.cybertek;
+package com.cybertek.Day1_Navigation_Locators;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Point;
