@@ -7,11 +7,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class ManagingBrowserWindow {
     public static void main(String[] args) {
 
-        //set up chrome driver
+        // set up chrome driver
         WebDriverManager.chromedriver().setup();
         // create chrome driver object
         WebDriver driver = new ChromeDriver();
-        // navigate to https://yahoo.com
-        driver.get("https://amazon.com");
+
+
+        // maximize the browser window
+
+        // make the browser window full screen
+
+        // quit the browser
     }
 }
