@@ -7,15 +7,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class SeleniumDryRun {
     public static void main(String[] args) {
 
-        //1. setup chrome driver using webdriver manager
+        //1. setup chrome driver using web driver manager
             // so selenium can send interaction request
         WebDriverManager.chromedriver().setup();
 
-        //2. create webdriver instance using chrome driver object
-        WebDriver drive = new ChromeDriver();
+        //2. create web driver instance using chrome driver object
+        WebDriver driver = new ChromeDriver();
 
         //3. navigate to google.com
-        drive.get("https://google.com");
+        driver.get("https://google.com");
+
 
     }
 }
