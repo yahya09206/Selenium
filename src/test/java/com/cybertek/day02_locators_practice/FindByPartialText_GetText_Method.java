@@ -22,5 +22,12 @@ public class FindByPartialText_GetText_Method {
 
         String fullLinkText = myLink.getText();
         System.out.println("fullLinkText = " + fullLinkText);
+
+        // what if i just provide partial link as letter A
+        WebElement aLink = driver.findElement(By.partialLinkText("A"));
+        System.out.println("aLink.getText() = " + aLink.getText());
+
+
+        driver.quit();
     }
 }
