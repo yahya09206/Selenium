@@ -56,11 +56,11 @@ public class Homework1 {
         Thread.sleep(5000);
 
         // click on cancel button
-//        WebElement cancel = driver.findElement(By.linkText("Cancel"));
-//        cancel.click();
+        WebElement cancel = driver.findElement(By.linkText("Cancel"));
+        cancel.click();
 
         // close window
-        //driver.quit();
+        driver.quit();
 
     }
 }
