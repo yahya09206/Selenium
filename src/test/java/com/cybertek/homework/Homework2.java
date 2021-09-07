@@ -16,6 +16,9 @@ public class Homework2 {
         WebDriver driver = new ChromeDriver();
         driver.get("http://zero.webappsecurity.com/");
 
+        // get all the links that have partial text A in it
+        List<WebElement> allLinks = driver.findElements(By.partialLinkText("A"));
+
         if (driver.getTitle().equals("Zero - Personal Banking - Loans - Credit Cards")){
             driver.findElement(By.id("signin_button")).click();
         }
@@ -30,11 +33,16 @@ public class Homework2 {
             driver.findElement(By.name("submit")).click();
         }
 
+        Thread.sleep(2000);
         if (driver.getTitle().equals("Zero - Account Summary")){
-            // get all the links that have partial text A in it
-            List<WebElement> allLinks = driver.findElements(By.partialLinkText("A"));
-            // get the size of this list so we know how many links with partial text A
-            System.out.println("allLink.size() = " + allLinks.size());
+            // get the first item and get the text
+            System.out.println("Success");
         }
+
+        Thread.sleep(3000);
+
+        driver.quit();
+
+
     }
 }
