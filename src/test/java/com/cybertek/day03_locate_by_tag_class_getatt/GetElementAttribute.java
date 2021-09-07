@@ -21,6 +21,11 @@ public class GetElementAttribute {
         System.out.println("firstLink.getText() = " + firstLink.getText());
 
         // get any attribute of identified element, in this case href
+        System.out.println("firstLink.getAttribute(\"href\") = "
+                            + firstLink.getAttribute("href"));
+
+        // quit browser
+        driver.quit();
 
     }
 }
