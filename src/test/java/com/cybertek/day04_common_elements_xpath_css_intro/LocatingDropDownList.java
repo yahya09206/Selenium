@@ -28,5 +28,19 @@ public class LocatingDropDownList {
         // Select item with visible text 1990
         yearSelectObj.selectByVisibleText("1990");
 
+        // TODO: Identify the month dropdown
+        WebElement monthDropDown = driver.findElement(By.id("month"));
+
+        // TODO: Wrap it up using Select class so we can use easy methods
+        Select monthSelectobj = new Select(monthDropDown);
+
+        // TODO: Select items in 3 different ways
+        monthSelectobj.selectByIndex(4);
+        monthSelectobj.selectByValue("7");
+        monthSelectobj.selectByVisibleText("December");
+
+        // Close the browser
+        driver.quit();
+
     }
 }
