@@ -22,6 +22,8 @@ public class FindElementByCssSelector {
         // WebElement searchbox = driver.findElement(By.cssSelector("input[id='yschsp'"));
         // WebElement searchbox = driver.findElement(By.cssSelector("input[name='p'[type='text'"));
         searchbox.sendKeys("CSS SELECTOR");
+        WebElement clearIcon = driver.findElement(By.cssSelector("button#sbq-clear"));
+        clearIcon.click();
 
 
 
