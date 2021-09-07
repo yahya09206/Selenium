@@ -25,12 +25,13 @@ public class Homework2 {
         WebElement countDiv = driver.findElement(By.id("result-stats"));
         System.out.println("countDiv.getText() = " + countDiv.getText());
 
-        // Get link that contain selenium
-        List<WebElement> containSel = driver.findElements(By.linkText("Selenium"));
+        // Get links that contain selenium
+        List<WebElement> containSel = driver.findElements(By.partialLinkText("Selenium"));
         // Print first
-        System.out.println("containSel.get(0) = " + containSel.get(0));
+        WebElement firstElement = containSel.get(0);
+        System.out.println("firstElement.getText() = " + firstElement.getText());
         // Print last
-        System.out.println("containSel.get(containSel.size() -1 ) = " + containSel.get(containSel.size() - 1));
+
 
 
         Thread.sleep(2000);
