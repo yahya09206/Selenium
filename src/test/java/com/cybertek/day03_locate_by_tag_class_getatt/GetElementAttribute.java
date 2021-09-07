@@ -17,6 +17,7 @@ public class GetElementAttribute {
         // get the first link on the page and get href attribute
         WebElement firstLink = driver.findElement(By.linkText("A/B Testing"));
 
+        // get any attribute of identified element, in this case href
 
     }
 }
