@@ -24,6 +24,7 @@ public class Homework2 {
             signinBox.sendKeys("username");
             WebElement passwordBox = driver.findElement(By.id("user_password"));
             passwordBox.sendKeys("password");
+            driver.findElement(By.name("submit")).click();
         }
     }
 }
