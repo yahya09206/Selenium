@@ -21,7 +21,7 @@ public class Homework2 {
         Thread.sleep(2000);
         if (driver.getTitle().equals("Zero - Log in")){
             WebElement signinBox = driver.findElement(By.id("user_login"));
-
+            signinBox.sendKeys("username");
         }
     }
 }
