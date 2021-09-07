@@ -31,8 +31,5 @@ public class FindElementByCssSelector {
         searchIcon.click();
 
         driver.quit();
-
-
-
     }
 }
