@@ -16,6 +16,8 @@ public class Homework2 {
 
         // Search for Selenium
         WebElement searchBox = driver.findElement(By.name("q"));
+        searchBox.sendKeys("Selenium");
+        driver.findElement(By.name("btnI")).submit();
 
     }
 }
