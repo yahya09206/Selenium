@@ -21,7 +21,12 @@ public class LocatingDropDownList {
         Select yearSelectObj = new Select(yearDropDown);
 
         // TODO: Select items in 3 different ways
+        // Select 3rd item
         yearSelectObj.selectByIndex(2);
+        // Select item with value attribute 2019
+        yearSelectObj.selectByValue("2019");
+        // Select item with visible text 1990
+        yearSelectObj.selectByVisibleText("1990");
 
     }
 }
