@@ -3,6 +3,7 @@ package com.cybertek.homework;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Homework2 {
@@ -19,6 +20,7 @@ public class Homework2 {
 
         Thread.sleep(2000);
         if (driver.getTitle().equals("Zero - Log in")){
+            WebElement signinBox = driver.findElement(By.id("user_login"));
 
         }
     }
