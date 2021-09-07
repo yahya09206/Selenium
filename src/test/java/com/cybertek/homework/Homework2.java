@@ -27,14 +27,20 @@ public class Homework2 {
 
         // Get links that contain selenium
         List<WebElement> containSel = driver.findElements(By.partialLinkText("Selenium"));
+        // Print size
+        System.out.println("containSel.size() = " + containSel.size());
         // Print first
         WebElement firstElement = containSel.get(0);
         System.out.println("firstElement.getText() = " + firstElement.getText());
         // Print last
+        WebElement lastElement = containSel.get(containSel.size()-1);
+        System.out.println("lastElement.getText() = " + lastElement.getText());
 
+        for (WebElement eachElement : containSel) {
 
+            System.out.println("eachElement.getText() = " + eachElement.getText());
+        }
 
-        Thread.sleep(2000);
         driver.quit();
 
     }
