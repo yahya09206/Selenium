@@ -34,15 +34,20 @@ public class GetElementAttribute {
         System.out.println("searchBox.getAttribute(\"class\") = " + searchBox.getAttribute("class"));
 
         // get max length attr
+        System.out.println("searchBox.getAttribute(\"maxLength\") = " + searchBox.getAttribute("maxLength"));
 
 
         // get title attr
+        System.out.println("searchBox.getAttribute(\"title\") = " + searchBox.getAttribute("title"));
 
         // auto capitalize
+        System.out.println("searchBox.getAttribute(\"autocapitalize\") = " + searchBox.getAttribute("autocapitalize"));
 
         // get spellcheck attr
+        System.out.println("searchBox.getAttribute(\"spellcheck\") = " + searchBox.getAttribute("spellcheck"));
 
         // get role attr
+        System.out.println("searchBox.getAttribute(\"role\") = " + searchBox.getAttribute("role"));
 
         // quit browser
         driver.quit();
