@@ -27,5 +27,9 @@ public class Homework2 {
             Thread.sleep(2000);
             driver.findElement(By.name("submit")).click();
         }
+
+//        if (driver.getTitle().equals("Zero - Account Summary")){
+//
+//        }
     }
 }
