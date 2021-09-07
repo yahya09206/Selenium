@@ -24,6 +24,11 @@ public class GetElementAttribute {
         System.out.println("firstLink.getAttribute(\"href\") = "
                             + firstLink.getAttribute("href"));
 
+        // navigate to google.com and identify the search box and get couple attributes value
+        driver.navigate().to("https://google.com/");
+        // identify search box
+        WebElement searchBox = driver.findElement(By.name("q"));
+
         // quit browser
         driver.quit();
 
