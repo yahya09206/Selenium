@@ -22,6 +22,8 @@ public class Homework2 {
         if (driver.getTitle().equals("Zero - Log in")){
             WebElement signinBox = driver.findElement(By.id("user_login"));
             signinBox.sendKeys("username");
+            WebElement passwordBox = driver.findElement(By.id("user_password"));
+            passwordBox.sendKeys("password");
         }
     }
 }
