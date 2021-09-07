@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.List;
+
 public class Homework2 {
     public static void main(String[] args) throws InterruptedException {
 
@@ -28,8 +30,11 @@ public class Homework2 {
             driver.findElement(By.name("submit")).click();
         }
 
-//        if (driver.getTitle().equals("Zero - Account Summary")){
-//
-//        }
+        if (driver.getTitle().equals("Zero - Account Summary")){
+            // get all the links that have partial text A in it
+            List<WebElement> allLinks = driver.findElements(By.partialLinkText("A"));
+            // get the size of this list so we know how many links with partial text A
+            System.out.println("allLink.size() = " + allLinks.size());
+        }
     }
 }
