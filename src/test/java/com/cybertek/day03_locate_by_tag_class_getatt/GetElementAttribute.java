@@ -28,6 +28,15 @@ public class GetElementAttribute {
         driver.navigate().to("https://google.com/");
         // identify search box
         WebElement searchBox = driver.findElement(By.name("q"));
+        searchBox.sendKeys("Selenium");
+
+        // get the class attribute
+
+        // get max length attr
+
+        // get title attr
+
+        // auto capitalize
 
         // quit browser
         driver.quit();
