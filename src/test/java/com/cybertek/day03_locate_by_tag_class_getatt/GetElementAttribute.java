@@ -31,12 +31,18 @@ public class GetElementAttribute {
         searchBox.sendKeys("Selenium");
 
         // get the class attribute
+        System.out.println("searchBox.getAttribute(\"class\") = " + searchBox.getAttribute("class"));
 
         // get max length attr
+
 
         // get title attr
 
         // auto capitalize
+
+        // get spellcheck attr
+
+        // get role attr
 
         // quit browser
         driver.quit();
