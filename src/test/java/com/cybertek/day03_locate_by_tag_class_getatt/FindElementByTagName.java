@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.List;
+
 public class FindElementByTagName {
     public static void main(String[] args) {
 
@@ -24,6 +26,18 @@ public class FindElementByTagName {
         // identify first element with tag name a
         WebElement firstLink = driver.findElement(By.tagName("a"));
         System.out.println("firstLink.getText() = " + firstLink.getText());
+
+        // what if wanted to find and store all elements with <a> tag -->> findElements
+        List<WebElement> allATagElements = driver.findElements(By.tagName("a"));
+        // get size
+        System.out.println("allATagElements.size() = " + allATagElements.size());
+
+        // iterate over this list, get the text of the link and get attribute and print them out
+        // allATagElements.iter and hit enter, give a name to each element
+        for (WebElement eachElement : allATagElements) {
+            System.out.println("eachElement.getText() = " + eachElement.getText());
+            System.out.println("eachElement.getAttribute(\"href\") = " + eachElement.getAttribute("href"));
+        }
 
         // close browser
         driver.quit();
