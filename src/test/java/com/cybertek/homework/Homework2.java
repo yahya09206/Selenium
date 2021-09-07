@@ -6,8 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.List;
-
 public class Homework2 {
     public static void main(String[] args) throws InterruptedException {
 
@@ -17,7 +15,7 @@ public class Homework2 {
         driver.get("http://zero.webappsecurity.com/");
 
         // get all the links that have partial text A in it
-        List<WebElement> allLinks = driver.findElements(By.partialLinkText("S"));
+        //List<WebElement> allLinks = driver.findElements(By.partialLinkText("S"));
 
         if (driver.getTitle().equals("Zero - Personal Banking - Loans - Credit Cards")){
             driver.findElement(By.id("signin_button")).click();
@@ -36,16 +34,12 @@ public class Homework2 {
         Thread.sleep(2000);
         if (driver.getTitle().equals("Zero - Account Summary")){
             // iterate over whole list and print out the text
-            for( WebElement eachElement : allLinks){
-
-                System.out.println("eachElement.getText() = " + eachElement.getText());
-
-            }
+            System.out.println("Success");
         }
 
         Thread.sleep(3000);
 
-        //driver.quit();
+        driver.quit();
 
 
     }
