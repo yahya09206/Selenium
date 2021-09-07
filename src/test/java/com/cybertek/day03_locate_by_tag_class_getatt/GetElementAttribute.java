@@ -59,6 +59,10 @@ public class GetElementAttribute {
         System.out.println("searchBox.getAttribute(\"value\") = "
                             + searchBox.getAttribute("value"));
 
+        // HW
+        // Identify the google search button and get below attributes
+        // class, type, value and anything else you see
+
         // quit browser
         driver.quit();
 
