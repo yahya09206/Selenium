@@ -18,5 +18,6 @@ public class FindElementByXPath_Intro {
 
         // Using above full XPath to identify the element and get the text
         WebElement headerSpan = driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div/h1/span"));
+        System.out.println("headerSpan.getText() = " + headerSpan.getText());
     }
 }
