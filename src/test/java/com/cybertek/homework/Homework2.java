@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Homework2 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         //Set up Chrome Driver
         WebDriverManager.chromedriver().setup();
@@ -16,5 +16,7 @@ public class Homework2 {
         if (driver.getTitle().equals("Zero - Personal Banking - Loans - Credit Cards")){
             driver.findElement(By.id("signin_button")).click();
         }
+
+        Thread.sleep(2000);
     }
 }
