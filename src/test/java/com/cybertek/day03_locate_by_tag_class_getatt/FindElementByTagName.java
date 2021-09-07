@@ -23,6 +23,10 @@ public class FindElementByTagName {
 
         // identify first element with tag name a
         WebElement firstLink = driver.findElement(By.tagName("a"));
+        System.out.println("firstLink.getText() = " + firstLink.getText());
+
+        // close browser
+        driver.quit();
 
     }
 }
