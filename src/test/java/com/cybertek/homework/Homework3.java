@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Homework2 {
+public class Homework3 {
     public static void main(String[] args) throws InterruptedException {
 
         //Set up Chrome Driver
