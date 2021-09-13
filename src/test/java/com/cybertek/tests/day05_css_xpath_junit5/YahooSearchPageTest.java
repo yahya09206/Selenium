@@ -39,7 +39,7 @@ public class YahooSearchPageTest {
         // and search for Selenium
             // Title should start with selenium
     @Test
-    public void testYahooSearchResultPageTitle(){
+    public void testYahooSearchResultPageTitle() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -48,10 +48,10 @@ public class YahooSearchPageTest {
         WebElement searchBox = driver.findElement(By.name("p"));
         searchBox.sendKeys("Selenium");
         driver.findElement(By.id("yschsp")).click();
-
+        Thread.sleep(5000);
         String expectedTitle = "Selenium - Yahoo Search Results";
         String actualTitle = driver.getTitle();
-
+        Thread.sleep(5000);
         // quit browser
         driver.quit();
 
