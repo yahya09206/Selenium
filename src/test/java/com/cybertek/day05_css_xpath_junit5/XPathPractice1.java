@@ -24,7 +24,8 @@ public class XPathPractice1 {
         retrieveBtn.click();
 
         // use xpath to identify confimation message
-
+        WebElement confirmationMsg = driver.findElement(By.xpath("h4[@name='confirmation_message']"));
+        System.out.println("confirmationMsg.getText() = " + confirmationMsg.getText());
 
     }
 }
