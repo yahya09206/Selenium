@@ -3,6 +3,7 @@ package com.cybertek.tests.day05_css_xpath_junit5;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -46,8 +47,8 @@ public class YahooSearchPageTest {
         driver.get("https://search.yahoo.com/");
 
         WebElement searchBox = driver.findElement(By.name("p"));
-        searchBox.sendKeys("Selenium");
-        driver.findElement(By.id("yschsp")).submit();
+        searchBox.sendKeys("Selenium" + Keys.ENTER);
+        //driver.findElement(By.id("yschsp")).submit();
 
         String expectedTitle = "Selenium - Yahoo Search Results";
         String actualTitle = driver.getTitle();
