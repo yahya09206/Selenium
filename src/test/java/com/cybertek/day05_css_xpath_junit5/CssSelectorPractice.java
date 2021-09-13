@@ -39,6 +39,5 @@ public class CssSelectorPractice {
         System.out.println("confirmationMsg.getText() = " + confirmationMsg.getText());
 
         driver.close();
-
     }
 }
