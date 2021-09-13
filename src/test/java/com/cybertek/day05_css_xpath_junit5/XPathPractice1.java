@@ -17,6 +17,10 @@ public class XPathPractice1 {
         WebElement forgetPasswordHeader = driver.findElement(By.xpath("//h2[ text() = 'Forgot Password']"));
         System.out.println("forgetPasswordHeader.getText() = " + forgetPasswordHeader.getText());
 
+        WebElement emailBox = driver.findElement(By.xpath("//input[ @name='email' and @type='text']"));
+        emailBox.sendKeys("someone@somewhere.com");
+
+        WebElement retrieveBtn = driver.findElement(By.xpath(""))
 
     }
 }
