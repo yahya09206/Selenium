@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class YahooSearchPageTest {
 
@@ -47,10 +48,12 @@ public class YahooSearchPageTest {
         driver.get("https://search.yahoo.com/");
 
         WebElement searchBox = driver.findElement(By.name("p"));
+        // we can simulate key stroke using Keys.SELECT_ONE_OF_THE_OPTION
+        // in this case we are typing selenium and hitting enter
         searchBox.sendKeys("Selenium" + Keys.ENTER);
-        //driver.findElement(By.id("yschsp")).submit();
+        // driver.findElement(By.id("yschsp")).submit();
 
-        String expectedTitle = "Selenium - Yahoo Search Results";
+        // String expectedTitle = "selenium";
         String actualTitle = driver.getTitle();
 
         // quit browser
@@ -58,6 +61,6 @@ public class YahooSearchPageTest {
 
         // do static import, so you can do this
         // import static org.junit.jupiter.api.Assertions.*;
-        assertEquals(expectedTitle, actualTitle);
+        assertTrue(actualTitle.startsWith("Selenium"));
     }
 }
