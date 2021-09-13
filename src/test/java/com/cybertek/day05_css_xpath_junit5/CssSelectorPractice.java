@@ -18,7 +18,7 @@ public class CssSelectorPractice {
         // form input[name='email]
         // form#forgot_password input input[name='email']
         // #forgot_password input[name='email']
-        WebElement emailBox = driver.findElement(By.cssSelector("form input[name='email']"));
+        WebElement emailBox = driver.findElement(By.cssSelector("input[name='email']"));
         emailBox.sendKeys("someone@somewhere.com");
 
         /**
@@ -26,7 +26,7 @@ public class CssSelectorPractice {
          * button#form_submit
          * button#form_submit.radius
          * button[id='form_submit'][class='radius']
-        * */
+         **/
         WebElement retrieveBtn = driver.findElement(By.cssSelector("#form_submit"));
         retrieveBtn.click();
 
