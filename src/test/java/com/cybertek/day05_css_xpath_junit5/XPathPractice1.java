@@ -23,7 +23,9 @@ public class XPathPractice1 {
         WebElement retrieveBtn = driver.findElement(By.xpath("//button[@id='form_submit' and @class='radius']"));
         retrieveBtn.click();
 
-        String confirmationLocatorStr = "//h4[@name='confirmation_message']";
+
+        String confirmationLocatorStr = "//h4[text()=\"Your email's been sent!\"]";
+        System.out.println("confirmationLocatorStr = " + confirmationLocatorStr);
 
         // use xpath to identify confirmation message
 //        WebElement confirmationMsg = driver.findElement(By.xpath("h4[@name='confirmation_message']"));
