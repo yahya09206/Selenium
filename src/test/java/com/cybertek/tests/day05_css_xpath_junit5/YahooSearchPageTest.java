@@ -31,13 +31,9 @@ public class YahooSearchPageTest {
         // do static import so you can do this
         // import static org.junit.jupiter.api.Assertions.*;
         assertEquals(expectedTitle, actualTitle);
-
-
     }
     // test method name: testYahooSearchResultPageTitle
     // test when you navigate to yahoo search page
         // and search for Selenium
             // Title should start with selenium
-
-
 }
