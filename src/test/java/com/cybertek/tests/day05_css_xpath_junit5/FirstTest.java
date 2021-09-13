@@ -19,6 +19,10 @@ public class FirstTest {
     public void testString(){
 
         String msg = "I love Selenium";
+        // assert this msg = "I love Selenium"
+        Assertions.assertEquals("I love Selenium", msg);
+        // assert this msg starts with "I love"
+
 
     }
 
