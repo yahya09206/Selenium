@@ -27,6 +27,9 @@ public class XPathPractice1 {
         String confirmationLocatorStr = "//h4[text()=\"Your email's been sent!\"]";
         System.out.println("confirmationLocatorStr = " + confirmationLocatorStr);
 
+        WebElement confirmationMsg = driver.findElement(By.xpath(confirmationLocatorStr));
+        System.out.println("confirmationMsg.getText() = " + confirmationMsg.getText());
+
         // use xpath to identify confirmation message
 //        WebElement confirmationMsg = driver.findElement(By.xpath("h4[@name='confirmation_message']"));
 //        System.out.println("confirmationMsg.getText() = " + confirmationMsg.getText());
