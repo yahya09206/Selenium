@@ -15,7 +15,10 @@ public class FirstTest {
         Assertions.assertEquals(expectedResult, num1 + num2);
     }
 
+    @Test
     public void testString(){
+
+        String msg = "I love Selenium";
 
     }
 
