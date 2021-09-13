@@ -47,11 +47,11 @@ public class YahooSearchPageTest {
 
         WebElement searchBox = driver.findElement(By.name("p"));
         searchBox.sendKeys("Selenium");
-        driver.findElement(By.id("yschsp")).click();
-        Thread.sleep(5000);
+        driver.findElement(By.id("yschsp")).submit();
+
         String expectedTitle = "Selenium - Yahoo Search Results";
         String actualTitle = driver.getTitle();
-        Thread.sleep(5000);
+
         // quit browser
         driver.quit();
 
