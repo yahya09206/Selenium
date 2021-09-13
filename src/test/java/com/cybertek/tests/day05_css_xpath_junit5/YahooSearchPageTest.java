@@ -48,7 +48,7 @@ public class YahooSearchPageTest {
         driver.get("https://search.yahoo.com/");
 
         WebElement searchBox = driver.findElement(By.name("p"));
-        // we can simulate key stroke using Keys.SELECT_ONE_OF_THE_OPTION
+        // we can simulate keystroke using Keys.SELECT_ONE_OF_THE_OPTION
         // in this case we are typing selenium and hitting enter
         searchBox.sendKeys("Selenium" + Keys.ENTER);
         // driver.findElement(By.id("yschsp")).submit();
