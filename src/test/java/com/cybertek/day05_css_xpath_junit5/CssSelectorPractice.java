@@ -11,24 +11,32 @@ public class CssSelectorPractice {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
-        driver.get("https://practice.cybertekschool.com/forgot_password");
+        driver.get("http://practice.cybertekschool.com/forgot_password");
 
         // locate two elements using css selector
         // input[name='email']
         // form input[name='email]
         // form#forgot_password input input[name='email']
         // #forgot_password input[name='email']
-        WebElement emailBox = driver.findElement(By.cssSelector("input[name='email']"));
+        WebElement emailBox = driver.findElement(By.cssSelector("form input[name='email']"));
         emailBox.sendKeys("someone@somewhere.com");
 
         /**
-        * #form_submit
+         * #form_submit
          * button#form_submit
          * button#form_submit.radius
          * button[id='form_submit'][class='radius']
         * */
         WebElement retrieveBtn = driver.findElement(By.cssSelector("#form_submit"));
         retrieveBtn.click();
+
+        /**
+         * div#content > h4[name='confirmation_message']
+         * div > h4[name='confirmation_message']
+         * h4[name='confirmation_message']
+         */
+        WebElement confirmationMsg = driver.findElement(By.cssSelector("h4[name='confirmation_message']"));
+        System.out.println("confirmationMsg.getText() = " + confirmationMsg.getText());
 
         driver.close();
 
