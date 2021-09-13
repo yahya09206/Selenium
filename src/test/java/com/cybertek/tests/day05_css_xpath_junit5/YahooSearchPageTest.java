@@ -18,7 +18,9 @@ public class YahooSearchPageTest {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("");
+        driver.get("https://search.yahoo.com/");
+
+        String expectedTitle = "https://search.yahoo.com/";
     }
     // test method name: testYahooSearchResultPageTitle
     // test when you navigate to yahoo search page
