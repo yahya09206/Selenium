@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class XPathPractice1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
@@ -26,6 +26,9 @@ public class XPathPractice1 {
         // use xpath to identify confimation message
         WebElement confirmationMsg = driver.findElement(By.xpath("h4[@name='confirmation_message']"));
         System.out.println("confirmationMsg.getText() = " + confirmationMsg.getText());
+
+        Thread.sleep(5000);
+        driver.quit();
 
     }
 }
