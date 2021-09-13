@@ -22,9 +22,8 @@ public class FirstTest {
         // assert this msg = "I love Selenium"
         Assertions.assertEquals("I love Selenium", msg);
         // assert this msg starts with "I love"
+        // below assertTrue method accept 1 parameter
         Assertions.assertTrue(msg.startsWith("I love"));
 
     }
-
-
 }
