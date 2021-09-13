@@ -14,6 +14,11 @@ public class CssSelectorPractice {
         driver.get("https://practice.cybertekschool.com/forgot_password");
 
         // locate two elements using css selector
-        WebElement emailBox = driver.findElement(By.cssSelector());
+        // input[name='email']
+        // form input[name='email]
+        // form#forgot_password input input[name='email']
+        // #forgot_password input[name='email']
+        WebElement emailBox = driver.findElement(By.cssSelector("input[name='email']"));
+
     }
 }
