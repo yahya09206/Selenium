@@ -4,7 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class FirstTest {
-
+    // Test method is annotated with @Test annotation
+    // It is a void method with no param
     @Test
     public void testAddition(){
 
@@ -12,6 +13,11 @@ public class FirstTest {
         int num2 = 7;
         int expectedResult = 17;
         Assertions.assertEquals(expectedResult, num1 + num2);
+    }
+
+    public void testString(){
 
     }
+
+
 }
