@@ -20,7 +20,11 @@ public class XPathPractice1 {
         WebElement emailBox = driver.findElement(By.xpath("//input[ @name='email' and @type='text']"));
         emailBox.sendKeys("someone@somewhere.com");
 
-        WebElement retrieveBtn = driver.findElement(By.xpath(""))
+        WebElement retrieveBtn = driver.findElement(By.xpath("//button[@id='form_submit' and @class='radius']"));
+        retrieveBtn.click();
+
+        // use xpath to identify confimation message
+
 
     }
 }
