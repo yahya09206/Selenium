@@ -25,6 +25,7 @@ public class WebDriverFactory {
                 driver = null;
                 System.out.println("UNKNOWN BROWSER TYPE!!! " + browserName);
         }
+        driver.manage().window().maximize();
         return driver;
 
     }
