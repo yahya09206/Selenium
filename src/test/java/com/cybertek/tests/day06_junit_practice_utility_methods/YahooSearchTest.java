@@ -21,7 +21,11 @@ public class YahooSearchTest extends TestBase {
             // navigate to yahoo search and enter selenium and hit enter
             driver.get("https://search.yahoo.com");
             driver.findElement(By.name("p")).sendKeys("selenium" + Keys.ENTER);
-//        assert title starts with selenium
+//          assert title starts with selenium
             assertTrue(driver.getTitle().startsWith("selenium"));
+
+            System.out.println("driver.getTitle() = " + driver.getTitle());
+            assertTrue(driver.getTitle().startsWith("selenium"));
+
         }
 }
