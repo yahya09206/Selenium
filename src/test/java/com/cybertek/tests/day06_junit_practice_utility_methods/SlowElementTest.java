@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 public class SlowElementTest extends TestBase {
 
     @Test
-    public void testWait() throws InterruptedException {
+    public void testWait() {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         // we can instruct web driver to wait maximum amount of time
@@ -20,8 +20,6 @@ public class SlowElementTest extends TestBase {
 
         driver.navigate().to("http://practice.cybertekschool.com/dynamic_controls");
         driver.findElement(By.xpath("//button[.='Remove']")).click();
-
-        //Thread.sleep(5000);
 
         WebElement itsGoneElm = driver.findElement(By.id("message"));
         System.out.println("itsGoneElm.getText() = " + itsGoneElm.getText());
