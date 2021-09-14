@@ -4,6 +4,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 
+/**
+ * This class is meant to be super class
+ * to provide driver set up and closing browser
+ * for it's subclasses
+ */
+
 public abstract class TestBase {
 
     protected WebDriver driver;
