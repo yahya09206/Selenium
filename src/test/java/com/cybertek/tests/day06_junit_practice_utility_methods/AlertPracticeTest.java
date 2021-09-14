@@ -38,6 +38,7 @@ public class AlertPracticeTest extends TestBase {
 
         driver.findElement(By.xpath("//button[.='Click for JS Prompt']")).click();
         driver.switchTo().alert().sendKeys("Hello"); // this is how we enter text into prompt box
+        driver.switchTo().alert().accept();
 
         System.out.println("The end");
     }
