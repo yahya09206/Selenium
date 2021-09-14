@@ -5,8 +5,10 @@ import org.junit.jupiter.api.Test;
 
 public class AlertPracticeTest extends TestBase {
 
+    // regular(ok), confirm(ok and cancel), prompt(enter text)
     @Test
     public void testJavaScriptAlert(){
 
+        driver.get("http://practice.cybertekschool.com/javascript_alerts");
     }
 }
