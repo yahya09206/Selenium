@@ -26,6 +26,5 @@ public class YahooSearchTest extends TestBase {
 
             System.out.println("driver.getTitle() = " + driver.getTitle());
             assertTrue(driver.getTitle().startsWith("selenium"));
-
         }
 }
