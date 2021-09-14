@@ -5,14 +5,12 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.concurrent.TimeUnit;
-
 public class SlowElementTest extends TestBase {
 
     @Test
     public void testWait() {
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         // we can instruct web driver to wait maximum amount of time
         // before throwing NoSuchElement Exception by using implicit wait
         // If element is not available, it will wait for maximum of 10seconds
