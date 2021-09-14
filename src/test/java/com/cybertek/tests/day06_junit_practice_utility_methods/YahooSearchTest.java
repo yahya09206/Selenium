@@ -22,7 +22,7 @@ public class YahooSearchTest extends TestBase {
             driver.get("https://search.yahoo.com");
             driver.findElement(By.name("p")).sendKeys("selenium" + Keys.ENTER);
 //          assert title starts with selenium
-            Thread.sleep(3000);
+            //Thread.sleep(3000);
 
             System.out.println("driver.getTitle() = " + driver.getTitle());
             assertTrue(driver.getTitle().startsWith("selenium"));
