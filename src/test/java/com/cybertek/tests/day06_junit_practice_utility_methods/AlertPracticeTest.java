@@ -32,6 +32,8 @@ public class AlertPracticeTest extends TestBase {
 //        Alert alertObj = driver.switchTo().alert();
 //        alertObj.accept();
 
+        driver.findElement(By.xpath("//button[.='Click for JS Confirm']")).click();
+        driver.switchTo().alert().dismiss(); // this will click on dismiss button on the confirmation box
 
 
         System.out.println("The end");
