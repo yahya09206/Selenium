@@ -10,6 +10,11 @@ public class SlowElementTest extends TestBase {
     @Test
     public void testWait() throws InterruptedException {
 
+        // we can instruct web driver to wait maximum amount of time
+        // before throwing NoSuchElement Exception by using implicit wait
+        // If element is not available, it will wait for maximum of 10seconds
+        // If element is found before 10s for example 1 second --> It will move on to next step
+
         driver.navigate().to("http://practice.cybertekschool.com/dynamic_controls");
         driver.findElement(By.xpath("//button[.='Remove']")).click();
 
