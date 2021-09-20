@@ -97,7 +97,9 @@ public class ActionClassTest extends TestBase {
         actions.keyDown(Keys.SHIFT).sendKeys("i love selenium")
                 .pause(2000).keyUp(Keys.SHIFT)
                 .sendKeys("i love selenium").pause(2000)
-                .keyDown(Keys.COMMAND).sendKeys("A") // will select all text on mac
+                .keyDown(Keys.COMMAND).sendKeys("A")// will select all text on mac
+                .keyUp(Keys.COMMAND).pause(2000)
+                .sendKeys(Keys.BACK_SPACE)
                 .perform();
 
     }
