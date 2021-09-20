@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ActionClassTest extends TestBase {
@@ -68,5 +69,8 @@ public class ActionClassTest extends TestBase {
         actions.dragAndDrop(smallCircle, biggerCircle).perform();
 
         BrowserUtil.waitFor(2);
+
+        // verify the big circle test has change to You did great!
+        assertEquals("You did great!", biggerCircle.getText());
     }
 }
