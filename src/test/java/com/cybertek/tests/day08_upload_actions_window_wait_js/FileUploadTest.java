@@ -34,5 +34,11 @@ public class FileUploadTest extends TestBase {
         WebElement successMsg = driver.findElement(By.xpath("//h3[.='File Uploaded!']"));
         assertTrue(successMsg.isDisplayed());
 
+
+        // Thread.sleep(2000); is needed sometimes, but we are forced to deal with check exception
+        // objective: have a utility method human-readable
+        // BrowserUtil.waitFor(2); ===>> no exception handling just wait for 2 seconds
+        // Create a class called BrowserUtil under utility package
+        // Create a static void method called waitFor accept int as second to wait
     }
 }
