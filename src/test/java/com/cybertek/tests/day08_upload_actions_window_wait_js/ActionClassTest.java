@@ -45,11 +45,26 @@ public class ActionClassTest extends TestBase {
         actions.moveToElement(img1Elm).pause(2000)
                 .moveToElement(img2Elm).pause(2000)
                 .moveToElement(img1Elm).pause(2000)
-                .moveToElement(img2Elm).pause(2000);
+                .moveToElement(img2Elm).pause(2000)
+                .perform();
 
 
         //TODO: Homework: get a List<WebElement> containing those 3 images, Iterate over the list to hover over and
         // verify the text
 
+    }
+
+    @Test
+    public void testDragAndDrop(){
+
+        driver.get("https://demos.telerik.com/kendo-ui/dragdrop/index");
+        BrowserUtil.waitFor(2);
+
+        WebElement smallCircle = driver.findElement(By.id("draggable"));
+        WebElement biggerCircle = driver.findElement(By.id("droptarget"));
+
+        // dragAndDrop method of Actions class, accept 2 webelement and drop first one into second one
+        Actions actions = new Actions(driver);
+        actions.dragAndDrop(smallCircle, biggerCircle);
     }
 }
