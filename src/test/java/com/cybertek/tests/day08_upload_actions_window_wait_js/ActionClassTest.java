@@ -4,6 +4,7 @@ import com.cybertek.utility.BrowserUtil;
 import com.cybertek.utility.TestBase;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
@@ -76,6 +77,28 @@ public class ActionClassTest extends TestBase {
 
     @Test
     public void testKeyboardAction(){
+
+        // navigate to https://www.google.com
+        // hold down to shift enter text "i love selenium"
+        // release the shift
+        // enter text "i love selenium"
+        // hold down to command on mac and enter "A"
+        // release the command or control key
+        // then hit backspace to delete
+        driver.get("https://www.google.com");
+        // locate searchBox using name value q
+        WebElement searchBox = driver.findElement(By.name("q"));
+        // create actions class instance
+        Actions actions = new Actions(driver);
+        // keyDown method for holding down to certain modifier key like Control, Shift and so on
+        // keyUp method is for releasing what you are holding down
+        // sendKeys method of Actions class is for pressing keys that are provided
+        // pause method of Actions class is for pausing in between actions in milliseconds
+        actions.keyDown(Keys.SHIFT).sendKeys("i love selenium")
+                .pause(2000).keyUp(Keys.SHIFT)
+                .sendKeys("i love selenium").pause(2000)
+                .keyDown(Keys.COMMAND).sendKeys("A") // will select all text on mac
+                .perform();
 
     }
 }
