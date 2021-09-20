@@ -65,6 +65,8 @@ public class ActionClassTest extends TestBase {
 
         // dragAndDrop method of Actions class, accept 2 webelement and drop first one into second one
         Actions actions = new Actions(driver);
-        actions.dragAndDrop(smallCircle, biggerCircle);
+        actions.dragAndDrop(smallCircle, biggerCircle).perform();
+
+        BrowserUtil.waitFor(2);
     }
 }
