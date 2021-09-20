@@ -73,4 +73,9 @@ public class ActionClassTest extends TestBase {
         // verify the big circle test has change to You did great!
         assertEquals("You did great!", biggerCircle.getText());
     }
+
+    @Test
+    public void testKeyboardAction(){
+
+    }
 }
