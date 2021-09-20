@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class FileUploadTest extends TestBase {
 
     @Test
@@ -22,8 +24,15 @@ public class FileUploadTest extends TestBase {
         WebElement fileInputField = driver.findElement(By.id("file-upload"));
         // find the full path of your file in your computer and send key into above input field
         String filePath = "/Users/solodolo/Desktop/Screen Shot 2021-08-16 at 12.40.46 PM.png";
+        // insert file into upload field
         fileInputField.sendKeys(filePath);
+        // click submit
         driver.findElement( By.id("file-submit")).click();
+
+        // TODO: Optionally Assert "File Uploaded!" success message showed up
+        // Success message page: //h3[.='File Uploaded!']
+        WebElement successMsg = driver.findElement(By.xpath("//h3[.='File Uploaded!']"));
+        assertTrue(successMsg.isDisplayed());
 
     }
 }
