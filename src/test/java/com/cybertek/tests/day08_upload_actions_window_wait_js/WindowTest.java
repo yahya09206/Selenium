@@ -59,7 +59,9 @@ public class WindowTest extends TestBase {
         System.out.println("Switching back to original tab");
         driver.switchTo().window(currentHandle);
         // assert the title is now "Practice"
+        System.out.println("current tab driver.getTitle() = " + driver.getTitle());
         assertEquals("Practice", driver.getTitle());
+
 
     }
 }
