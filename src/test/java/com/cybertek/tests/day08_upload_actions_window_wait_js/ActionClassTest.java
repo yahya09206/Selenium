@@ -101,6 +101,10 @@ public class ActionClassTest extends TestBase {
                 .keyUp(Keys.COMMAND).pause(2000)
                 .sendKeys(Keys.BACK_SPACE)
                 .perform();
+    }
+
+    @Test
+    public void testDoubleClick(){
 
     }
 }
