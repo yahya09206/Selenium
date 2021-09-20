@@ -122,4 +122,22 @@ public class ActionClassTest extends TestBase {
         BrowserUtil.waitFor(2);
 
     }
+
+    @Test
+    public void testRightClick(){
+        // navigate to below url
+        driver.get("https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_oncontextmenu");
+        // switch to iframe
+        driver.switchTo().frame("iframeResult");
+        // locate yellow area : css selector div[contextmenu='mymenu']
+        WebElement yellowArea = driver.findElement(By.cssSelector("div[contextmenu='mymenu']"));
+
+        // right-click on that area using Actions class method
+        Actions actions = new Actions(driver);
+        // right click is called contextClick
+        actions.contextClick(yellowArea).perform();
+
+        BrowserUtil.waitFor(2);
+        // close the alert that showed up after
+    }
 }
