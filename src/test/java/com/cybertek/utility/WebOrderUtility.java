@@ -32,4 +32,8 @@ public class WebOrderUtility{
         driverParam.findElement(By.id("ctl00_MainContent_login_button")).click();
 
     }
+
+    public static void logout(){
+
+    }
 }

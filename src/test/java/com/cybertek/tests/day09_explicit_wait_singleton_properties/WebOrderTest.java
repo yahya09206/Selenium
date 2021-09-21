@@ -2,7 +2,6 @@ package com.cybertek.tests.day09_explicit_wait_singleton_properties;
 
 import com.cybertek.utility.BrowserUtil;
 import com.cybertek.utility.TestBase;
-import com.cybertek.utility.WebOrderUtility;
 import org.junit.jupiter.api.Test;
 
 public class WebOrderTest extends TestBase {
@@ -18,7 +17,9 @@ public class WebOrderTest extends TestBase {
 //        // click login
 //        driver.findElement(By.id("ctl00_MainContent_login_button")).click();
 
-        WebOrderUtility.login(driver);
+//        WebOrderUtility.login(driver);
+
+        //WebOrderUtility.login(driver, "Tester", "test");
 
         BrowserUtil.waitFor(4);
 
