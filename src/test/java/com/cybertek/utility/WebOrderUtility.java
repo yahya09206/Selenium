@@ -7,16 +7,16 @@ import org.openqa.selenium.WebDriver;
 // it simply doesnt not make sense
 public class WebOrderUtility{
 
-    public static void login(){
+    public static void login(WebDriver driverParam){
 
         // BELOW LINE WILL NOT WORK BECASUE IT WILL OPEN NEW DRIVER EACH TIME
         // WebDriver driver = WebDriverFactory.getDriver("chrome");
         // enter username
-        driver.findElement(By.id("ctl00_MainContent_username")).sendKeys("Tester");
+        driverParam.findElement(By.id("ctl00_MainContent_username")).sendKeys("Tester");
         // enter password
-        driver.findElement(By.id("ctl00_MainContent_password")).sendKeys("test");
+        driverParam.findElement(By.id("ctl00_MainContent_password")).sendKeys("test");
         // click login
-        driver.findElement(By.id("ctl00_MainContent_login_button")).click();
+        driverParam.findElement(By.id("ctl00_MainContent_login_button")).click();
 
     }
 }
