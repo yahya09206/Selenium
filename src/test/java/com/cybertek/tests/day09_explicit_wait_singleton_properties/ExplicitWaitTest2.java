@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
+import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 public class ExplicitWaitTest2 extends TestBase {
 
     @Test
@@ -30,7 +30,6 @@ public class ExplicitWaitTest2 extends TestBase {
         // wait.until(elementToBeClickable(By.cssSelector("form#input-example>input")));
         wait.until(elementToBeClickable(inputField));
         // now enter something into the input field
-        // now enter something into the input filed
         inputField.sendKeys("HELLO WORLD");
 
         BrowserUtil.waitFor(5);
