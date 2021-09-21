@@ -33,7 +33,9 @@ public class WebOrderUtility{
 
     }
 
-    public static void logout(){
+    public static void logout(WebDriver driverParam){
 
+        // logout link has id of ctl00_logout
+        driverParam.findElement(By.id("ctl100_logout")).click();
     }
 }
