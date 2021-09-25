@@ -121,4 +121,10 @@ public class WebOrderUtility{
             System.out.println("No such tab available");
         }
     }
+
+    /**8. Create a method `checkAll`
+     1. accept no param , return `boolean`
+     2. click on `Check All` button
+     3. return `true` if all checkboxes are checked , false if any left unchecked
+     * */
 }
