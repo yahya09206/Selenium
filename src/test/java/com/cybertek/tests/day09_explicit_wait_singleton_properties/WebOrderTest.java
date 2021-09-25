@@ -20,10 +20,10 @@ public class WebOrderTest extends TestBase {
 
 //        WebOrderUtility.login(driver);
 
-        WebOrderUtility.login(driver, "Tester", "test");
+        WebOrderUtility.login("Tester", "test");
         BrowserUtil.waitFor(2);
 
-        WebOrderUtility.logout(driver);
+        WebOrderUtility.logout();
 
         BrowserUtil.waitFor(4);
 
