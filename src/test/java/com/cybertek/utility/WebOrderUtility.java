@@ -153,10 +153,10 @@ public class WebOrderUtility{
     public static boolean unCheckAll(){
         boolean result = false;
         // select check box and click
-        Driver.getDriver().findElement(By.id("ctl00_MainContent_btnCheckAll")).click();
+        Driver.getDriver().findElement(By.id("ctl00_MainContent_btnUnheckAll")).click();
         List<WebElement> checkBoxesClicked = Driver.getDriver().findElements(By.xpath("//input[@type='checkbox']"));
         for (WebElement webElement : checkBoxesClicked) {
-            if (webElement.isSelected()){
+            if (!webElement.isSelected()){
                 result = true;
             }else {
                 result = false;
