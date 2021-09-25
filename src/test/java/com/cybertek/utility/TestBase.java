@@ -23,7 +23,7 @@ public abstract class TestBase {
 //        driver = new ChromeDriver();
 //        driver.manage().window().maximize();
         //driver = WebDriverFactory.getDriver("chrome");
-        // use new driver from driver class
+        // 1. Update 'TestBase' class to use 'Driver.getDriver()' instead of 'WebDriverFactory'
         driver = Driver.getDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
