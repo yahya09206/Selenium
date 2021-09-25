@@ -255,8 +255,11 @@ public class WebOrderUtility{
      *        4.  get text attribute of `Total` inputbox and return from the method.
      */
     public static int calculateTotal(String productName, int quantity){
-        int result = 0;
+
         selectSideBarTab("Order");
+        int result = 0;
+        Select select = new Select(Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct")));
+        select.selectByValue(productName);
         WebElement quantityBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_txtQuantity"));
         quantityBox.click();
         quantityBox.sendKeys("" + quantity);
