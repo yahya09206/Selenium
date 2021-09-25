@@ -28,4 +28,9 @@ public class Driver {
             return obj;
         }
     }
+
+    public static void openWebOrderApp(){
+
+        getDriver().navigate().to("http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Login.aspx");
+    }
 }

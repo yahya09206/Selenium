@@ -61,9 +61,4 @@ public class WebOrderUtility{
         }
         return result ;
     }
-
-    public static void openWebOrderApp(){
-        Driver.getDriver();
-    }
-
 }
