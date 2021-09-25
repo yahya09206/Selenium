@@ -5,6 +5,7 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
@@ -173,8 +174,15 @@ public class WebOrderUtility{
      *     4.  save each cell value in first column `Product name` in the table into `List<String>`
      * */
     public static List<String> getAllProducts(){
+
         //click on view all products tabs
         WebElement viewAllProducts = Driver.getDriver().findElement(By.xpath("//a[.='View all products']"));
-        List<WebElement> result = Driver.getDriver().findElements(By.xpath("//div[@class = 'ProductsTable']"));
+        viewAllProducts.click();
+        List<String> result = new ArrayList<>();
+        List<WebElement> allProducts = Driver.getDriver().findElements(By.xpath("//div[@class = 'ProductsTable']"));
+        for (WebElement allProduct : allProducts) {
+            result.add(allProduct.getText());
+        }
+        return result;
     }
 }
