@@ -2,8 +2,9 @@ package com.cybertek.utility;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
 // This isn't a test class so we can not extend testbase
 // it simply doesn't make sense
@@ -45,11 +46,14 @@ public class WebOrderUtility{
         Driver.getDriver().findElement(By.id("ctl00_logout")).click();
     }
 
+// 4. Update `isAtOrderPage()` for performance
+//    1. observe : the code works great when header element found ,but forced to wait for 10 seconds of implicit wait when element not found
+//    2. use Explicit wait technic we learned to minimize the wait time to 2 seconds max by waiting accoridng to expected condition of header element is visible : `visibilityOfElementLocated` condition
     public static boolean isAtOrderPage(){
         boolean result = false ;
         try{
             WebDriverWait wait = new WebDriverWait(Driver.getDriver(),2);
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[normalize-space(.)='List of All Orders']"))) ;
+            wait.until(visibilityOfElementLocated(By.xpath("//h2[normalize-space(.)='List of All Orders']"))) ;
             System.out.println("ELEMENT WAS IDENTIFIED ");
             result = true ;
         }catch (TimeoutException e){
