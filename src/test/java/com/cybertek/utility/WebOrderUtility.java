@@ -7,12 +7,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
-// This isn't a test class so we can not extend testbase
-// it simply doesn't make sense
 
-// 3. Create new `WebOrderUtility` with different name or modify existing one.
-//      1. remove `WebDriver driverParam`
-//      2. re-create the methods to use `Driver.getDriver()`
+    /**
+     This isn't a test class so we can not extend testbase
+     it simply doesn't make sense
+
+     3. Create new `WebOrderUtility` with different name or modify existing one.
+          1. remove `WebDriver driverParam`
+          2. re-create the methods to use `Driver.getDriver()`
+     */
 public class WebOrderUtility{
 
     public static void login(){
@@ -47,9 +50,13 @@ public class WebOrderUtility{
         Driver.getDriver().findElement(By.id("ctl00_logout")).click();
     }
 
-// 4. Update `isAtOrderPage()` for performance
-//    1. observe : the code works great when header element found ,but forced to wait for 10 seconds of implicit wait when element not found
-//    2. use Explicit wait technic we learned to minimize the wait time to 2 seconds max by waiting accoridng to expected condition of header element is visible : `visibilityOfElementLocated` condition
+    /**
+     4. Update `isAtOrderPage()` for performance
+        1. observe : the code works great when header element found ,but forced to wait for 10 seconds of implicit wait when element not found
+        2. use Explicit wait technic we learned to minimize the
+        wait time to 2 seconds max by waiting accoridng
+        to expected condition of header element is visible : `visibilityOfElementLocated` condition
+     */
     public static boolean isAtOrderPage(){
         boolean result = false ;
         try{
@@ -62,21 +69,26 @@ public class WebOrderUtility{
         }
         return result ;
     }
-//    5. Create a method called openWebOrderApp()
-//    - no param , no return type
-//    - simply navigate to WebOrder login page
-//    - use `Driver` class we created , no param!
+
+    /**
+        5. Create a method called openWebOrderApp()
+            - no param , no return type
+            - simply navigate to WebOrder login page
+            - use `Driver` class we created , no param!
+     */
     public static void openWebOrderApp(){
 
         Driver.getDriver().get("http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Login" +
                 ".aspx");
     }
 
-//  6. Create a method `verifyUserName`
-//     1. accept `String username` as parameter
-//     2. The method check the welcome message right beside `logout`
-//        link contains username or not. for example `Welcome , Tester` contains `Tester`
-//     3. return `true` if it match username passed, false if not.
+    /**
+     * 6. Create a method `verifyUserName`
+     *      1. accept `String username` as parameter
+     *      2. The method check the welcome message right beside `logout`
+     *         link contains username or not. for example `Welcome , Tester` contains `Tester`
+     *      3. return `true` if it match username passed, false if not.
+     *      */
     public static boolean verifyUserName(String username){
         boolean result = false;
         WebElement welcomeMsg = Driver.getDriver().findElement(By.xpath("//div[@class='login_info']"));
@@ -86,5 +98,27 @@ public class WebOrderUtility{
             result = false;
         }
         return result;
+    }
+
+    /**
+     * 7. Create a method `selectSideBarTab`
+     *    1. accept `String tabName` no return type.
+     *    2. click on the tab according to the tabName provided, for example :
+     *    if "View all products" passed to the method , it should click on second tab. */
+    public static void selectSideBarTab(String tabName){
+        //Which web elements are available
+        WebElement viewAllOrders = Driver.getDriver().findElement(By.partialLinkText("View all orders"));
+        WebElement viewAllProds = Driver.getDriver().findElement(By.xpath("//*[@id=\"ctl00_menu\"]/li[2]/a"));
+        WebElement viewOrder = Driver.getDriver().findElement(By.cssSelector("#ctl00_menu > li:nth-child(3) > a"));
+
+        if (tabName.equals(viewAllProds)){
+            viewAllOrders.click();
+        }else if(tabName.equals(viewAllProds)){
+            viewAllProds.click();
+        }else if(tabName.equals(viewOrder)){
+            viewAllOrders.click();
+        }else {
+            System.out.println("No such tab available");
+        }
     }
 }
