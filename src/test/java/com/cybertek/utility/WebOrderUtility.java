@@ -3,6 +3,7 @@ package com.cybertek.utility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
@@ -196,8 +197,15 @@ public class WebOrderUtility{
      *         2.  click `calculate` button
      *         3.  get the value attribute of `Price per unit:` input box
      *         4.  return it from the method. */
-    public static int getUnitPriceFromForm(){
+    public static int getUnitPriceFromForm(String productName){
         int result = 0;
+        // select product from dropdown list
+        Select select = new Select(Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct")));
+        select.selectByValue(productName);
+
+        // get value attribute from unit price box
+        WebElement unitPrice = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_txtUnitPrice"));
+        result = Integer.parseInt(unitPrice.getAttribute("value"));
 
         return result;
     }
