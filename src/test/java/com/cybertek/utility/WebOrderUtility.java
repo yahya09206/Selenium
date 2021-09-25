@@ -243,4 +243,31 @@ public class WebOrderUtility{
 
         return result;
     }
+
+    /**
+     * 13. Create a method `calculateTotal`
+     *     1.  accept `String productName` , `int quantity`
+     *     2. return `int` for total
+     *     3. It should
+     *        1.  select `productName` from product dropdown list
+     *        2.  Enter `quantity` into `Quantity:*` inputbox
+     *        3.  Click `calculate` button
+     *        4.  get text attribute of `Total` inputbox and return from the method.
+     */
+    public static int calculateTotal(String productName, int quantity){
+        int result = 0;
+        selectSideBarTab("Order");
+        WebElement quantityBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_txtQuantity"));
+        quantityBox.click();
+        quantityBox.sendKeys("" + quantity);
+        //click calculate button
+        WebElement calculateBtn = Driver.getDriver().findElement(By.xpath("//input[@value='Calculate']"));
+        calculateBtn.click();
+        // get text attribute of 'Total' inputbox
+        WebElement totalBox = Driver.getDriver().findElement(By.id("name=\"ctl00$MainContent$fmwOrder$txtTotal\""));
+        String valueOfTotal = totalBox.getAttribute("value");
+        result = Integer.parseInt(valueOfTotal);
+
+        return result;
+    }
 }
