@@ -20,6 +20,11 @@ public class Driver {
             WebDriverManager.chromedriver().setup();
             obj = new ChromeDriver();
             obj.manage().window().maximize();
+            // return obj that will be created only once each time
+            return obj;
+        }else {
+            // if object already exist then just return it
+            return obj
         }
     }
 }
