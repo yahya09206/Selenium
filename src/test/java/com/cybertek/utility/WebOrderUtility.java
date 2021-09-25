@@ -1,41 +1,44 @@
 package com.cybertek.utility;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 // This isn't a test class so we can not extend testbase
-// it simply doesnt not make sense
+// it simply doesn't make sense
+
+// 3. Create new `WebOrderUtility` with different name or modify existing one.
+//      1. remove `WebDriver driverParam`
+//      2. re-create the methods to use `Driver.getDriver()`
 public class WebOrderUtility{
 
-    public static void login(Driver getDriver){
+    public static void login(){
 
         // BELOW LINE WILL NOT WORK BECASUE IT WILL OPEN NEW DRIVER EACH TIME
         // WebDriver driver = WebDriverFactory.getDriver("chrome");
         // enter username
         Driver.getDriver().findElement(By.id("ctl00_MainContent_username")).sendKeys("Tester");
         // enter password
-        driverParam.findElement(By.id("ctl00_MainContent_password")).sendKeys("test");
+        Driver.getDriver().findElement(By.id("ctl00_MainContent_password")).sendKeys("test");
         // click login
-        driverParam.findElement(By.id("ctl00_MainContent_login_button")).click();
+        Driver.getDriver().findElement(By.id("ctl00_MainContent_login_button")).click();
 
     }
 
-    public static void login(WebDriver driverParam, String username, String password){
+    public static void login(String username, String password){
 
         // BELOW LINE WILL NOT WORK BECASUE IT WILL OPEN NEW DRIVER EACH TIME
         // WebDriver driver = WebDriverFactory.getDriver("chrome");
         // enter username
-        driverParam.findElement(By.id("ctl00_MainContent_username")).sendKeys(username);
+        Driver.getDriver().findElement(By.id("ctl00_MainContent_username")).sendKeys(username);
         // enter password
-        driverParam.findElement(By.id("ctl00_MainContent_password")).sendKeys(password);
+        Driver.getDriver().findElement(By.id("ctl00_MainContent_password")).sendKeys(password);
         // click login
-        driverParam.findElement(By.id("ctl00_MainContent_login_button")).click();
+        Driver.getDriver().findElement(By.id("ctl00_MainContent_login_button")).click();
 
     }
 
-    public static void logout(WebDriver driverParam){
+    public static void logout(){
 
         // logout link has id of ctl00_logout
-        driverParam.findElement(By.id("ctl00_logout")).click();
+        Driver.getDriver().findElement(By.id("ctl00_logout")).click();
     }
 }
