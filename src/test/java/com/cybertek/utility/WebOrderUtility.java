@@ -61,10 +61,22 @@ public class WebOrderUtility{
         }
         return result ;
     }
-
+//    5. Create a method called openWebOrderApp()
+//    - no param , no return type
+//    - simply navigate to WebOrder login page
+//    - use `Driver` class we created , no param!
     public static void openWebOrderApp(){
 
         Driver.getDriver().get("http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Login" +
                 ".aspx");
+    }
+
+//  6. Create a method `verifyUserName`
+//     1. accept `String username` as parameter
+//     2. The method check the welcome message right beside `logout`
+//        link contains username or not. for example `Welcome , Tester` contains `Tester`
+//     3. return `true` if it match username passed, false if not.
+    public static boolean verifyUserName(String username){
+
     }
 }
