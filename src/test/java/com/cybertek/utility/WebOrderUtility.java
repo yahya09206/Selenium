@@ -81,7 +81,7 @@ public class WebOrderUtility{
         boolean result = false;
         WebElement welcomeMsg = Driver.getDriver().findElement(By.xpath("//div[@class='login_info']"));
         String expectedName = welcomeMsg.;
-        if (welcomeMsg.getText().contains("Tester"))){
+        if (welcomeMsg.getText().contains("Tester")){
            result = true;
         }else {
             result = false;
