@@ -222,7 +222,25 @@ public class WebOrderUtility{
      *         3. click `calculate` button
      *         4. get text attribute of `discount` inputbox and return from the method.
      * */
-    public static int getDiscountFromForm(String productName){
+    public static int getDiscountFromForm(String productName, int quantity){
         selectSideBarTab("Order");
+        int result = 0;
+        Select select = new Select(Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct")));
+        select.selectByValue(productName);
+
+        // enter quantity
+        WebElement quantityBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_txtQuantity"));
+        quantityBox.click();
+        quantityBox.sendKeys("" + quantity);
+        //click calculate button
+        WebElement calculateBtn = Driver.getDriver().findElement(By.xpath("//input[@value='Calculate']"));
+        calculateBtn.click();
+        //locate discount box
+        WebElement discountBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_txtDiscount"));
+        // get value attribute from discount box and return
+        String valueOfDiscount = discountBox.getAttribute("value");
+        result = Integer.parseInt(valueOfDiscount);
+
+        return result;
     }
 }
