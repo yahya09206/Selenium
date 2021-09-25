@@ -2,6 +2,7 @@ package com.cybertek.utility;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
@@ -77,6 +78,14 @@ public class WebOrderUtility{
 //        link contains username or not. for example `Welcome , Tester` contains `Tester`
 //     3. return `true` if it match username passed, false if not.
     public static boolean verifyUserName(String username){
-
+        boolean result = false;
+        WebElement welcomeMsg = Driver.getDriver().findElement(By.xpath("//div[@class='login_info']"));
+        String expectedName = welcomeMsg.;
+        if (welcomeMsg.getText().contains("Tester"))){
+           result = true;
+        }else {
+            result = false;
+        }
+        return result;
     }
 }
