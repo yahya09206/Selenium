@@ -61,4 +61,10 @@ public class WebOrderUtility{
         }
         return result ;
     }
+
+    public static void openWebOrderApp(){
+
+        Driver.getDriver().get("http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Login" +
+                ".aspx");
+    }
 }
