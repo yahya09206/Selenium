@@ -107,9 +107,9 @@ public class WebOrderUtility{
      *    if "View all products" passed to the method , it should click on second tab. */
     public static void selectSideBarTab(String tabName){
         //Which web elements are available
-        WebElement viewAllOrders = Driver.getDriver().findElement(By.partialLinkText("View all orders"));
-        WebElement viewAllProds = Driver.getDriver().findElement(By.xpath("//*[@id=\"ctl00_menu\"]/li[2]/a"));
-        WebElement viewOrder = Driver.getDriver().findElement(By.cssSelector("#ctl00_menu > li:nth-child(3) > a"));
+        WebElement viewAllOrders = Driver.getDriver().findElement(By.xpath("//a[.='View all orders']"));
+        WebElement viewAllProds = Driver.getDriver().findElement(By.xpath("//a[.='View all products']"));
+        WebElement viewOrder = Driver.getDriver().findElement(By.xpath("//a[.='Order']"));
 
         if (tabName.equals(viewAllProds)){
             viewAllOrders.click();
