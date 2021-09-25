@@ -273,4 +273,16 @@ public class WebOrderUtility{
 
         return result;
     }
+
+    /**
+     * 13. Create a method `getExpectedDiscount`
+     *     1.  accept `String productName` , `int quantity`
+     *     2.  return `discount` amount according to `productName`,`quantity`
+     *     3.  It should
+     *         - if `quantity` is less than 10
+     *           - return `0`
+     *         - else according to all products table
+     *           - return `correct discount number` : 8 , 15, 10*/
+
+
 }
