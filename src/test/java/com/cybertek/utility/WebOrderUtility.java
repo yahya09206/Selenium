@@ -185,4 +185,20 @@ public class WebOrderUtility{
         }
         return result;
     }
+
+    /**
+     * ## Homework 3 : method practice
+     * 11. Create a method `getUnitPriceFromForm`
+     *     1.  accept `String productName`
+     *     2.  return `int` for unit price
+     *     3.  It should
+     *         1.  select product from product dropdown list
+     *         2.  click `calculate` button
+     *         3.  get the value attribute of `Price per unit:` input box
+     *         4.  return it from the method. */
+    public static int getUnitPriceFromForm(){
+        int result = 0;
+
+        return result;
+    }
 }
