@@ -80,7 +80,6 @@ public class WebOrderUtility{
     public static boolean verifyUserName(String username){
         boolean result = false;
         WebElement welcomeMsg = Driver.getDriver().findElement(By.xpath("//div[@class='login_info']"));
-        String expectedName = welcomeMsg.;
         if (welcomeMsg.getText().contains("Tester")){
            result = true;
         }else {
