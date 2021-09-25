@@ -211,5 +211,18 @@ public class WebOrderUtility{
         return result;
     }
 
-
+    /**
+     * 12. Create a method `getDiscountFromForm`
+     *     1.  accept `String productName` , `int quantity`
+     *     2.  return `int` for discount
+     *     3.  It should
+     *         1.  select `productName` from product dropdown list
+     *         2.  Enter `quantity` into `Quantity:*` inputbox (Fact : discount apply only
+     *         if quantity is 10+)
+     *         3. click `calculate` button
+     *         4. get text attribute of `discount` inputbox and return from the method.
+     * */
+    public static int getDiscountFromForm(String productName){
+        selectSideBarTab("Order");
+    }
 }
