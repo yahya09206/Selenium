@@ -5,6 +5,8 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
 
@@ -127,4 +129,18 @@ public class WebOrderUtility{
      2. click on `Check All` button
      3. return `true` if all checkboxes are checked , false if any left unchecked
      * */
+    public static boolean checkAll(){
+        boolean result = false;
+        // select check box and click
+        Driver.getDriver().findElement(By.id("ctl00_MainContent_btnCheckAll")).click();
+        List<WebElement> checkBoxesClicked = Driver.getDriver().findElements(By.xpath("//input[@type='checkbox']"));
+        for (WebElement webElement : checkBoxesClicked) {
+            if (webElement.isSelected()){
+                result = true;
+            }else {
+                result = false;
+            }
+        }
+        return result;
+    }
 }
