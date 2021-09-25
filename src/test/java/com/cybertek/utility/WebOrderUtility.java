@@ -154,8 +154,8 @@ public class WebOrderUtility{
         boolean result = false;
         // select check box and click
         Driver.getDriver().findElement(By.id("ctl00_MainContent_btnUnheckAll")).click();
-        List<WebElement> checkBoxesClicked = Driver.getDriver().findElements(By.xpath("//input[@type='checkbox']"));
-        for (WebElement webElement : checkBoxesClicked) {
+        List<WebElement> checkBoxesUnlicked = Driver.getDriver().findElements(By.xpath("//input[@type='checkbox']"));
+        for (WebElement webElement : checkBoxesUnlicked) {
             if (!webElement.isSelected()){
                 result = true;
             }else {
@@ -163,5 +163,18 @@ public class WebOrderUtility{
             }
         }
         return result;
+    }
+
+    /**
+     * 10. Create a method `getAllProducts`
+     *     1.  accept no param ,
+     *     2.  return `List<String>`
+     *     3.  click on `View All Products` tab
+     *     4.  save each cell value in first column `Product name` in the table into `List<String>`
+     * */
+    public static List<String> getAllProducts(){
+        //click on view all products tabs
+        WebElement viewAllProducts = Driver.getDriver().findElement(By.xpath("//a[.='View all products']"));
+        List<WebElement> result = Driver.getDriver().findElements(By.xpath("//div[@class = 'ProductsTable']"));
     }
 }
