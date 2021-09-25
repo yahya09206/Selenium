@@ -115,7 +115,7 @@ public class WebOrderUtility{
         WebElement viewAllProds = Driver.getDriver().findElement(By.xpath("//a[.='View all products']"));
         WebElement viewOrder = Driver.getDriver().findElement(By.xpath("//a[.='Order']"));
 
-        if (tabName.equals(viewAllProds)){
+        if (tabName.equals(viewAllOrders)){
             viewAllOrders.click();
         }else if(tabName.equals(viewAllProds)){
             viewAllProds.click();
@@ -175,10 +175,10 @@ public class WebOrderUtility{
      *     4.  save each cell value in first column `Product name` in the table into `List<String>`
      * */
     public static List<String> getAllProducts(){
-
+        selectSideBarTab("View all products");
         //click on view all products tabs
-        WebElement viewAllProducts = Driver.getDriver().findElement(By.xpath("//a[.='View all products']"));
-        viewAllProducts.click();
+//        WebElement viewAllProducts = Driver.getDriver().findElement(By.xpath("//a[.='View all products']"));
+//        viewAllProducts.click();
         List<String> result = new ArrayList<>();
         List<WebElement> allProducts = Driver.getDriver().findElements(By.xpath("//div[@class = 'ProductsTable']"));
         for (WebElement allProduct : allProducts) {
@@ -198,6 +198,7 @@ public class WebOrderUtility{
      *         3.  get the value attribute of `Price per unit:` input box
      *         4.  return it from the method. */
     public static int getUnitPriceFromForm(String productName){
+        selectSideBarTab("Order");
         int result = 0;
         // select product from dropdown list
         Select select = new Select(Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct")));
@@ -209,4 +210,6 @@ public class WebOrderUtility{
 
         return result;
     }
+
+
 }
