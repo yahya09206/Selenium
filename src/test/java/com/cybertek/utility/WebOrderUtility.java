@@ -383,7 +383,7 @@ public class WebOrderUtility{
         selectSideBarTab("Order");
         boolean result = false;
         // select process button
-        WebElement processBtn = Driver.getDriver().findElement(By.xpath("//div[@class='btn_light']"));
+        WebElement processBtn = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_InsertButton"));
         processBtn.click();
 
         WebElement successMessage = Driver.getDriver().findElement(By.xpath("//strong"));

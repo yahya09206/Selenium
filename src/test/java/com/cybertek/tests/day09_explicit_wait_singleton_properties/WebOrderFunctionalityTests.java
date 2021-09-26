@@ -76,4 +76,17 @@ public class WebOrderFunctionalityTests {
         assertEquals(WebOrderUtility.calculateTotal("ScreenSaver", 9), 9 * 20);
     }
 
+    @Test
+    public void productInformation_Calculation10orGreater(){
+        assertEquals(WebOrderUtility.calculateTotal("MyMoney", 10), 920);
+        assertEquals(WebOrderUtility.calculateTotal("FamilyAlbum", 10), 680);
+        assertEquals(WebOrderUtility.calculateTotal("ScreenSaver", 10), 180);
+    }
+
+    @Test
+    public void testOrderFlow(){
+        WebOrderUtility.enterAddressInfo();
+        WebOrderUtility.enterPaymentInfo();
+        WebOrderUtility.submitAndVerify();
+    }
 }
