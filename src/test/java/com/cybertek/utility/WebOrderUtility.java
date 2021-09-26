@@ -362,6 +362,9 @@ public class WebOrderUtility{
         Faker faker = new Faker();
         String cardNum = faker.number().digits(16);
         String date = "05/2025";
+
+        cardNumberBox.sendKeys(cardNum);
+        expDateBox.sendKeys(date);
     }
 
 }
