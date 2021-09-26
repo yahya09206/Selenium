@@ -366,4 +366,15 @@ public class WebOrderUtility{
         expDateBox.sendKeys(date);
     }
 
+    /**
+     *
+     * 16. Create a void method `submitAndVerify`
+     *     1. accept no param return boolean
+     *     2. click on `process` button
+     *     3. check if `New order has been successfully added.` message present
+     *     4. return `true` if it is , false if it is not.
+     *     5. Use explicit wait to avoid long wait time if not present.
+     */
+
+
 }
