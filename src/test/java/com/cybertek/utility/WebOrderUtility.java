@@ -379,6 +379,7 @@ public class WebOrderUtility{
         boolean result = false;
         // select process button
         WebElement processBtn = Driver.getDriver().findElement(By.xpath("//div[@class='btn_light']"));
+        processBtn.click();
         return result;
     }
 
