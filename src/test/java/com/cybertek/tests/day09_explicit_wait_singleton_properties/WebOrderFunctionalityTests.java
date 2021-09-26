@@ -26,4 +26,9 @@ public class WebOrderFunctionalityTests {
 
         assertTrue(WebOrderUtility.checkAll());
     }
+
+    @Test
+    public void testUncheckAllButton(){
+        assertTrue(WebOrderUtility.unCheckAll());
+    }
 }
