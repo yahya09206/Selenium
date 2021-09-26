@@ -119,11 +119,11 @@ public class WebOrderUtility{
         WebElement viewAllProds = Driver.getDriver().findElement(By.xpath("//a[.='View all products']"));
         WebElement viewOrder = Driver.getDriver().findElement(By.xpath("//a[.='Order']"));
 
-        if (tabName.equals(viewAllOrders)){
+        if (tabName.equals("View all orders")){
             viewAllOrders.click();
-        }else if(tabName.equals(viewAllProds)){
+        }else if(tabName.equals("View all products")){
             viewAllProds.click();
-        }else if(tabName.equals(viewOrder)){
+        }else if(tabName.equals("Order")){
             viewAllOrders.click();
         }else {
             System.out.println("No such tab available");
