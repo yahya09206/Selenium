@@ -321,7 +321,12 @@ public class WebOrderUtility{
         WebElement zipBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox5"));
 
         // call faker class
-        Faker fake = new Faker();
+        Faker faker = new Faker();
+        String name = faker.name().fullName();
+        String street = faker.address().streetAddress();
+        String city = faker.address().city();
+        String state = faker.address().state();
+        String zipCode = faker.address().zipCode();
     }
 
 }
