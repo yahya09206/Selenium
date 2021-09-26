@@ -124,7 +124,7 @@ public class WebOrderUtility{
         }else if(tabName.equals("View all products")){
             viewAllProds.click();
         }else if(tabName.equals("Order")){
-            viewAllOrders.click();
+            viewOrder.click();
         }else {
             System.out.println("No such tab available");
         }
