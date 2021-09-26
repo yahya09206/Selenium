@@ -32,6 +32,7 @@ public class WebOrderFunctionalityTests {
 
     @Test
     public void testUncheckAllButton(){
+
         assertTrue(WebOrderUtility.unCheckAll());
     }
 
@@ -68,4 +69,9 @@ public class WebOrderFunctionalityTests {
         assertEquals(WebOrderUtility.getExpectedDiscount("FamilyAlbum", 15), 15);
         assertEquals(WebOrderUtility.getExpectedDiscount("ScreenSaver", 20), 10);
     }
+
+    @Test void testProductInformation_CalculationLessThan10(){
+
+    }
+
 }

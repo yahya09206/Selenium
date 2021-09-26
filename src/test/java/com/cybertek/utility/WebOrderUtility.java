@@ -261,7 +261,7 @@ public class WebOrderUtility{
     public static int calculateTotal(String productName, int quantity){
 
         selectSideBarTab("Order");
-        int result = 0;
+        int result;
         Select select = new Select(Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct")));
         select.selectByValue(productName);
         WebElement quantityBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_txtQuantity"));
