@@ -301,7 +301,7 @@ public class WebOrderUtility{
         String valueString = discountInbox.getAttribute("value");
 
         result = Integer.parseInt(valueString);
-
+        System.out.println(result);
         return result;
     }
 
