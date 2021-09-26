@@ -10,7 +10,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.openqa.selenium.support.ui.ExpectedConditions.textToBe;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
 
@@ -385,8 +384,16 @@ public class WebOrderUtility{
 
         WebElement successMessage = Driver.getDriver().findElement(By.xpath("//strong"));
         String expectedMessage = "New order has been successfully added.";
-        // check if message matches expected result
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 5);
+        String actualMsg = successMessage.getText();
+
+        // check if messages match
+        if (expectedMessage.equals(actualMsg)){
+            result = true;
+        }else {
+            result = false;
+        }
+
+        return result;
 
     }
 
