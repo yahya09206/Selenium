@@ -266,7 +266,7 @@ public class WebOrderUtility{
         //click calculate button
         WebElement calculateBtn = Driver.getDriver().findElement(By.xpath("//input[@value='Calculate']"));
         calculateBtn.click();
-        // get text attribute of 'Total' inputbox
+        // get text attribute of 'Total' input box
         WebElement totalBox = Driver.getDriver().findElement(By.id("name=\"ctl00$MainContent$fmwOrder$txtTotal\""));
         String valueOfTotal = totalBox.getAttribute("value");
         result = Integer.parseInt(valueOfTotal);
@@ -283,6 +283,8 @@ public class WebOrderUtility{
      *           - return `0`
      *         - else according to all products table
      *           - return `correct discount number` : 8 , 15, 10*/
+    public static double getExpectedDiscount(String productName, int quantity){
 
+    }
 
 }
