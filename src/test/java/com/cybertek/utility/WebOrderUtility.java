@@ -53,6 +53,7 @@ public class WebOrderUtility{
 
         // logout link has id of ctl00_logout
         Driver.getDriver().findElement(By.id("ctl00_logout")).click();
+        Driver.getDriver().quit();
     }
 
     /**
