@@ -336,4 +336,13 @@ public class WebOrderUtility{
         zipBox.sendKeys(zipCode);
     }
 
+    /**
+     *15.  Create a void method `enterPaymentInfo`
+     *     1.  accept no param (optionally you can parameterize it but we will use `javafaker` library to randomize it later)
+     *     2.  It should fill up the `Payment Information` section of order form
+     */
+    public static void enterPaymentInfo(){
+
+    }
+
 }
