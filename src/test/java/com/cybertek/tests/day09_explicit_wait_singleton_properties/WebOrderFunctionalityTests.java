@@ -84,13 +84,8 @@ public class WebOrderFunctionalityTests {
     }
 
     @Test
-    public void testPaymentInfo(){
-        WebOrderUtility.enterAddressInfo();
-        WebOrderUtility.enterPaymentInfo();
-    }
-
-    @Test
     public void testOrderFlow(){
+
         WebOrderUtility.submitAndVerify();
     }
 }
