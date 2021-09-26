@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.openqa.selenium.support.ui.ExpectedConditions.textToBe;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
 
@@ -376,11 +377,17 @@ public class WebOrderUtility{
      *     5. Use explicit wait to avoid long wait time if not present.
      */
     public static boolean submitAndVerify(){
+        selectSideBarTab("Order");
         boolean result = false;
         // select process button
         WebElement processBtn = Driver.getDriver().findElement(By.xpath("//div[@class='btn_light']"));
         processBtn.click();
-        return result;
+
+        WebElement successMessage = Driver.getDriver().findElement(By.xpath("//strong"));
+        String expectedMessage = "New order has been successfully added.";
+        // check if message matches expected result
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 5);
+
     }
 
 }
