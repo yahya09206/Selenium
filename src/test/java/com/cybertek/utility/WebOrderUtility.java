@@ -345,6 +345,10 @@ public class WebOrderUtility{
         selectSideBarTab("Order");
         enterAddressInfo();
 
+        // select which radio button
+        Select select = new Select(Driver.getDriver().findElement(By.name("ctl00$MainContent$fmwOrder$cardList\"")));
+
+
     }
 
 }
