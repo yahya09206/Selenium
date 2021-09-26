@@ -38,7 +38,7 @@ public class WebOrderFunctionalityTests {
     @Test
     public void testAllProductNames(){
         WebOrderUtility.selectSideBarTab("View all products");
-
+        // check if headers are matching
         String actualHeader = Driver.getDriver().findElement(By.xpath("//h2")).getText();
         String expectedHeader = "List of Products";
         assertEquals(actualHeader, expectedHeader);
