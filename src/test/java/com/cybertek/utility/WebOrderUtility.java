@@ -1,6 +1,5 @@
 package com.cybertek.utility;
 
-import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
@@ -319,30 +318,17 @@ public class WebOrderUtility{
         selectSideBarTab("Order");
         // locate input boxes for address
         WebElement nameBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_txtName"));
+        nameBox.sendKeys("John Doe");
         WebElement streetBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox2"));
+        streetBox.sendKeys("1234 black lane avenue");
         WebElement cityBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox3"));
+        cityBox.sendKeys("Seattle");
         WebElement stateBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox4"));
+        stateBox.sendKeys("WA");
         WebElement zipBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox5"));
+        zipBox.sendKeys("98181");
 
-        // call faker class
-        Faker faker = new Faker();
-        String name = faker.name().fullName();
-        String street = faker.address().streetAddress();
-        String city = faker.address().city();
-        String state = faker.address().state();
-        String zipCode = faker.number().digits(5);
 
-        // enter info into boxes
-        nameBox.sendKeys(name);
-        BrowserUtil.waitFor(2);
-        streetBox.sendKeys(street);
-        BrowserUtil.waitFor(2);
-        cityBox.sendKeys(city);
-        BrowserUtil.waitFor(2);
-        stateBox.sendKeys(state);
-        BrowserUtil.waitFor(2);
-        zipBox.sendKeys(zipCode);
-        BrowserUtil.waitFor(2);
     }
 
     /**
@@ -359,9 +345,12 @@ public class WebOrderUtility{
         radio1.click();
         WebElement radio2 = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_cardList_1"));
         WebElement radio3 = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_cardList_2"));
-
+        String cardNum = "4234 5432 3445 4332";
+        String date = "05/2025";
         WebElement cardNumberBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox6"));
+        cardNumberBox.sendKeys(cardNum);
         WebElement expDateBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox1"));
+        expDateBox.sendKeys(date);
         BrowserUtil.waitFor(2);
 //        if (radio1.equals("Visa")){
 //            BrowserUtil.waitFor(2);
@@ -374,16 +363,6 @@ public class WebOrderUtility{
 //            radio3.click();
 //        }
 
-        BrowserUtil.waitFor(2);
-        // enter payment info
-        Faker faker = new Faker();
-        String cardNum = faker.number().digits(16);
-        String date = "05/2025";
-
-        BrowserUtil.waitFor(2);
-        cardNumberBox.sendKeys(cardNum);
-        expDateBox.sendKeys(date);
-        BrowserUtil.waitFor(2);
     }
 
     /**
