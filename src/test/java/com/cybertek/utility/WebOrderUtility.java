@@ -99,6 +99,7 @@ public class WebOrderUtility{
         boolean result;
         WebElement welcomeMsg = Driver.getDriver().findElement(By.xpath("//div[@class='login_info']"));
         if (welcomeMsg.getText().contains("Tester")){
+            System.out.println("Correct username");
            result = true;
         }else {
             result = false;

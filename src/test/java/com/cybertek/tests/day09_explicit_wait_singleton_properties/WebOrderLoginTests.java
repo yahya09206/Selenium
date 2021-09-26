@@ -21,16 +21,16 @@ public class WebOrderLoginTests {
         // get title
         String pageTitle = Driver.getDriver().getTitle();
         // get username
-        WebElement userName = Driver.getDriver().findElement(By.xpath("//div[@class='login_info']"));
-        String expectName = "Tester";
-        String actualName = userName.getText();
+//        WebElement userName = Driver.getDriver().findElement(By.xpath("//div[@class='login_info']"));
+//        String expectName = "Tester";
+//        String actualName = userName.getText();
         // check if at all orders page
 //        if (Driver.getDriver().getTitle().equals("Web Orders")){
 //            System.out.println("You are on the correct page " + pageTitle);
 //        }else {
 //            System.out.println("You are not on the correct page " + Driver.getDriver().getTitle());
 //        }
-        assertTrue(WebOrderUtility.isAtOrderPage());
+        //assertTrue(WebOrderUtility.isAtOrderPage());
 
         // check if username matches
 //        if (actualName.contains("Tester")){
