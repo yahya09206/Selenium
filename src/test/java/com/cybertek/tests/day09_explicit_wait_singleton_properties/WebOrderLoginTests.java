@@ -40,6 +40,30 @@ public class WebOrderLoginTests {
     @Test
     public void testLoginWithInvalidCredentials(){
 
+        // go to login page
+        WebOrderUtility.openWebOrderApp();
+        // login with correct credentials
+        WebOrderUtility.login("Test", "test");
+
+        // get title
+        String pageTitle = Driver.getDriver().getTitle();
+
+        // check if still on login page
+        if (Driver.getDriver().getTitle().equals("Web Orders Login")){
+            System.out.println("You are on the correct page " + pageTitle);
+        }else {
+            System.out.println("You are not on the correct page " + pageTitle);
+        }
+
+        WebElement errorMsg = Driver.getDriver().findElement(By.xpath("//span"));
+        String expectedMsg = "Invalid Login or Password";
+        String actualMsg = errorMsg.getText();
+
+        if (actualMsg.contains("Invalid Login or Password")){
+            System.out.println("Displaying correct message");
+        }else {
+            System.out.println("Not displaying correct message");
+        }
     }
 
 }
