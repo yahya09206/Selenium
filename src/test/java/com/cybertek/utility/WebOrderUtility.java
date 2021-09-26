@@ -305,4 +305,13 @@ public class WebOrderUtility{
         return result;
     }
 
+    /**
+     * 14. Create a void method `enterAddressInfo`
+     *     1.  accept no param (optionally you can parameterize it but we will use `javafaker` library to randomize it later)
+     *     2.  It should fill up the `Address Information` section of order form
+     */
+    public static void enterAddressInfo(){
+
+    }
+
 }
