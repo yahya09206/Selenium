@@ -334,10 +334,15 @@ public class WebOrderUtility{
 
         // enter info into boxes
         nameBox.sendKeys(name);
+        BrowserUtil.waitFor(2);
         streetBox.sendKeys(street);
+        BrowserUtil.waitFor(2);
         cityBox.sendKeys(city);
+        BrowserUtil.waitFor(2);
         stateBox.sendKeys(state);
+        BrowserUtil.waitFor(2);
         zipBox.sendKeys(zipCode);
+        BrowserUtil.waitFor(2);
     }
 
     /**
@@ -378,6 +383,7 @@ public class WebOrderUtility{
         BrowserUtil.waitFor(2);
         cardNumberBox.sendKeys(cardNum);
         expDateBox.sendKeys(date);
+        BrowserUtil.waitFor(2);
     }
 
     /**
@@ -391,6 +397,8 @@ public class WebOrderUtility{
      */
     public static boolean submitAndVerify(){
         selectSideBarTab("Order");
+        enterAddressInfo();
+        enterPaymentInfo();
         boolean result = false;
         // select process button
         WebElement processBtn = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_InsertButton"));
