@@ -82,7 +82,8 @@ public class WebOrderUtility{
      */
     public static void openWebOrderApp(){
 
-        Driver.getDriver().get("http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Login" +
+        Driver.getDriver().get(
+                "http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Login" +
                 ".aspx");
     }
 
@@ -284,7 +285,15 @@ public class WebOrderUtility{
      *         - else according to all products table
      *           - return `correct discount number` : 8 , 15, 10*/
     public static double getExpectedDiscount(String productName, int quantity){
-
+        int result = 0;
+        selectSideBarTab("Orders");
+        Select select = new Select(Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct")));
+        select.selectByValue(productName);
+        WebElement quantityBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_txtQuantity"));
+        quantityBox.sendKeys(""+quantity);
+        WebElement calculateButton = Driver.getDriver().findElement(By.xpath("//input[@value = 'Calculate']"));
+        calculateButton.click();
+        return result;
     }
 
 }
