@@ -287,7 +287,7 @@ public class WebOrderUtility{
      *           - return `correct discount number` : 8 , 15, 10*/
     public static double getExpectedDiscount(String productName, int quantity){
         int result = 0;
-        selectSideBarTab("Orders");
+        selectSideBarTab("Order");
 
         Select select = new Select(Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct")));
         select.selectByValue(productName);
@@ -312,7 +312,7 @@ public class WebOrderUtility{
      *     2.  It should fill up the `Address Information` section of order form
      */
     public static void enterAddressInfo(){
-        selectSideBarTab("Orders");
+        selectSideBarTab("Order");
         // locate input boxes for address
         WebElement nameBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_txtName"));
         WebElement streetBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox2"));
@@ -342,6 +342,8 @@ public class WebOrderUtility{
      *     2.  It should fill up the `Payment Information` section of order form
      */
     public static void enterPaymentInfo(){
+        selectSideBarTab("Order");
+        enterAddressInfo();
 
     }
 
