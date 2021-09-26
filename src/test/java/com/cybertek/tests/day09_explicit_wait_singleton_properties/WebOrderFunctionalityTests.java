@@ -71,7 +71,9 @@ public class WebOrderFunctionalityTests {
     }
 
     @Test void testProductInformation_CalculationLessThan10(){
-        assertEquals(WebOrderUtility.calculateTotal("MyMoney", 9), 9 * 80);
+        assertEquals(WebOrderUtility.calculateTotal("MyMoney", 9), 9 * 100);
+        assertEquals(WebOrderUtility.calculateTotal("FamilyAlbum", 9), 9 * 80);
+        assertEquals(WebOrderUtility.calculateTotal("ScreenSaver", 9), 9 * 20);
     }
 
 }
