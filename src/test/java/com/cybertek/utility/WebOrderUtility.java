@@ -315,6 +315,8 @@ public class WebOrderUtility{
         // locate input boxes for address
         WebElement nameBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_txtName"));
         WebElement streetBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox2"));
+        WebElement cityBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox3"));
+        WebElement stateBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox4"));
     }
 
 }
