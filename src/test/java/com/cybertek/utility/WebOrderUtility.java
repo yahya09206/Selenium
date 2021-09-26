@@ -1,5 +1,6 @@
 package com.cybertek.utility;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
@@ -319,7 +320,8 @@ public class WebOrderUtility{
         WebElement stateBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox4"));
         WebElement zipBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox5"));
 
-
+        // call faker class
+        Faker fake = new Faker();
     }
 
 }
