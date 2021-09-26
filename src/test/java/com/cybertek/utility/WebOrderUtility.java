@@ -346,8 +346,9 @@ public class WebOrderUtility{
         enterAddressInfo();
 
         // select which radio button
-        Select select = new Select(Driver.getDriver().findElement(By.name("ctl00$MainContent$fmwOrder$cardList\"")));
-
+        List<WebElement> radioBtn = Driver.getDriver().findElements(By.xpath("//input[@type='radio']"));
+        WebElement cardNumberBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox6"));
+        WebElement expDateBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox1"));
 
     }
 
