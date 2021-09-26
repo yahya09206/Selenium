@@ -317,6 +317,9 @@ public class WebOrderUtility{
         WebElement streetBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox2"));
         WebElement cityBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox3"));
         WebElement stateBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox4"));
+        WebElement zipBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox5"));
+
+
     }
 
 }
