@@ -375,6 +375,11 @@ public class WebOrderUtility{
      *     4. return `true` if it is , false if it is not.
      *     5. Use explicit wait to avoid long wait time if not present.
      */
-
+    public static boolean submitAndVerify(){
+        boolean result = false;
+        // select process button
+        WebElement processBtn = Driver.getDriver().findElement(By.xpath("//div[@class='btn_light']"));
+        return result;
+    }
 
 }
