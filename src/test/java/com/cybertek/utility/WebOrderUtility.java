@@ -349,23 +349,33 @@ public class WebOrderUtility{
         selectSideBarTab("Order");
 
         // select which radio button
-        List<WebElement> radioBtn = Driver.getDriver().findElements(By.xpath("//input[@type='radio']"));
+        //List<WebElement> radioBtn = Driver.getDriver().findElements(By.xpath("//input[@type='radio']"));
+        WebElement radio1 = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_cardList_0"));
+        radio1.click();
+        WebElement radio2 = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_cardList_1"));
+        WebElement radio3 = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_cardList_2"));
+
         WebElement cardNumberBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox6"));
         WebElement expDateBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox1"));
+        BrowserUtil.waitFor(2);
+//        if (radio1.equals("Visa")){
+//            BrowserUtil.waitFor(2);
+//            radio1.click();
+//        }else if (radio2.equals("MasterCard")){
+//            BrowserUtil.waitFor(2);
+//            radio2.click();
+//        }else if (radio3.equals("American Express")){
+//            BrowserUtil.waitFor(2);
+//            radio3.click();
+//        }
 
-        if (radioBtn.equals("Visa")){
-            radioBtn.get(0).click();
-        }else if (radioBtn.equals("MasterCard")){
-            radioBtn.get(1).click();
-        }else if (radioBtn.equals("American Express")){
-            radioBtn.get(2).click();
-        }
-
+        BrowserUtil.waitFor(2);
         // enter payment info
         Faker faker = new Faker();
         String cardNum = faker.number().digits(16);
         String date = "05/2025";
 
+        BrowserUtil.waitFor(2);
         cardNumberBox.sendKeys(cardNum);
         expDateBox.sendKeys(date);
     }
