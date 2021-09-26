@@ -30,7 +30,7 @@ public class WebOrderLoginTests {
         }
 
         // check if username matches
-        if (expectName.equals(actualName)){
+        if (actualName.contains("Tester")){
             System.out.println("Username matches " + actualName);
         }else {
             System.out.println("Names don't match");
