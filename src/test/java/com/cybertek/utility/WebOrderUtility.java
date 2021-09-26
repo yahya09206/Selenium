@@ -343,7 +343,6 @@ public class WebOrderUtility{
      */
     public static void enterPaymentInfo(){
         selectSideBarTab("Order");
-        enterAddressInfo();
 
         // select which radio button
         List<WebElement> radioBtn = Driver.getDriver().findElements(By.xpath("//input[@type='radio']"));
