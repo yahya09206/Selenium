@@ -384,6 +384,7 @@ public class WebOrderUtility{
         boolean result = false;
         // select process button
         WebElement processBtn = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_InsertButton"));
+        BrowserUtil.waitFor(2);
         processBtn.click();
 
         WebElement successMessage = Driver.getDriver().findElement(By.xpath("//strong"));
