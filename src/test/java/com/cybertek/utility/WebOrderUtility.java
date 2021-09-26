@@ -330,6 +330,10 @@ public class WebOrderUtility{
 
         // enter info into boxes
         nameBox.sendKeys(name);
+        streetBox.sendKeys(street);
+        cityBox.sendKeys(city);
+        stateBox.sendKeys(state);
+        zipBox.sendKeys(zipCode);
     }
 
 }
