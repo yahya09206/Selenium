@@ -287,12 +287,21 @@ public class WebOrderUtility{
     public static double getExpectedDiscount(String productName, int quantity){
         int result = 0;
         selectSideBarTab("Orders");
+
         Select select = new Select(Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct")));
         select.selectByValue(productName);
+
         WebElement quantityBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_txtQuantity"));
         quantityBox.sendKeys(""+quantity);
+
         WebElement calculateButton = Driver.getDriver().findElement(By.xpath("//input[@value = 'Calculate']"));
         calculateButton.click();
+
+        WebElement discountInbox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_txtDiscount"));
+        String valueString = discountInbox.getAttribute("value");
+
+        result = Integer.parseInt(valueString);
+
         return result;
     }
 
