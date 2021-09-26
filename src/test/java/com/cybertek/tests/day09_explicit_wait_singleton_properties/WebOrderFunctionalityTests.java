@@ -20,6 +20,7 @@ public class WebOrderFunctionalityTests {
         WebOrderUtility.logout();
 
     }
+
     @Test
     public void testCheckAllButton(){
 
