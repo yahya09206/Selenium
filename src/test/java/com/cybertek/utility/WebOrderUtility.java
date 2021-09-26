@@ -350,6 +350,13 @@ public class WebOrderUtility{
         WebElement cardNumberBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox6"));
         WebElement expDateBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox1"));
 
+        if (radioBtn.equals("Visa")){
+            radioBtn.get(0).click();
+        }else if (radioBtn.equals("MasterCard")){
+            radioBtn.get(1).click();
+        }else if (radioBtn.equals("American Express")){
+            radioBtn.get(2).click();
+        }
     }
 
 }
