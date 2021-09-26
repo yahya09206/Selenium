@@ -311,7 +311,10 @@ public class WebOrderUtility{
      *     2.  It should fill up the `Address Information` section of order form
      */
     public static void enterAddressInfo(){
-
+        selectSideBarTab("Orders");
+        // locate input boxes for address
+        WebElement nameBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_txtName"));
+        WebElement streetBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox2"));
     }
 
 }
