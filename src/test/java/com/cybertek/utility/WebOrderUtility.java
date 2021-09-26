@@ -261,17 +261,19 @@ public class WebOrderUtility{
     public static int calculateTotal(String productName, int quantity){
 
         selectSideBarTab("Order");
-        int result;
+        int result = 0;
         Select select = new Select(Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct")));
         select.selectByValue(productName);
         WebElement quantityBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_txtQuantity"));
-        quantityBox.click();
+        // quantityBox.click();
         quantityBox.sendKeys("" + quantity);
         //click calculate button
         WebElement calculateBtn = Driver.getDriver().findElement(By.xpath("//input[@value='Calculate']"));
         calculateBtn.click();
+
+
         // get text attribute of 'Total' input box
-        WebElement totalBox = Driver.getDriver().findElement(By.id("name=\"ctl00$MainContent$fmwOrder$txtTotal\""));
+        WebElement totalBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_txtTotal"));
         String valueOfTotal = totalBox.getAttribute("value");
         result = Integer.parseInt(valueOfTotal);
 

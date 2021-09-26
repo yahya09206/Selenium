@@ -71,7 +71,7 @@ public class WebOrderFunctionalityTests {
     }
 
     @Test void testProductInformation_CalculationLessThan10(){
-
+        assertEquals(WebOrderUtility.calculateTotal("MyMoney", 9), 9 * 80);
     }
 
 }
