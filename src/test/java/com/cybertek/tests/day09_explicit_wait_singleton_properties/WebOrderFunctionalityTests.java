@@ -43,5 +43,26 @@ public class WebOrderFunctionalityTests {
         String expectedHeader = "List of Products";
         assertEquals(actualHeader, expectedHeader);
 
+//        // check if list of orders match
+//        String[] expectedArray = {"MyMoney", "FamilyAlbum", "ScreenSaver"};
+//        List<String> expectedList = Arrays.asList(expectedArray);
+//
+//        List<String> actualList = WebOrderUtility.getAllProducts();
+//        assertEquals(actualList, expectedList);
+
+
+    }
+
+    @Test
+    public void testProductInformationPrice(){
+        assertEquals(WebOrderUtility.getUnitPriceFromForm("MyMoney"),100);
+        assertEquals(WebOrderUtility.getUnitPriceFromForm("FamilyAlbum"),80);
+        assertEquals(WebOrderUtility.getUnitPriceFromForm("ScreenSaver"),20);
+
+    }
+
+    @Test
+    public void testProductInformationDiscount(){
+
     }
 }
