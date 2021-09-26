@@ -64,5 +64,8 @@ public class WebOrderFunctionalityTests {
     @Test
     public void testProductInformationDiscount(){
 
+        assertEquals(WebOrderUtility.getExpectedDiscount("MyMoney", 10), 8);
+        assertEquals(WebOrderUtility.getExpectedDiscount("FamilyAlbum", 15), 15);
+        assertEquals(WebOrderUtility.getExpectedDiscount("ScreenSaver", 20), 10);
     }
 }
