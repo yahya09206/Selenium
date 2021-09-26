@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class WebOrderLoginTests {
 
     @Test
@@ -23,18 +25,20 @@ public class WebOrderLoginTests {
         String expectName = "Tester";
         String actualName = userName.getText();
         // check if at all orders page
-        if (Driver.getDriver().getTitle().equals("Web Orders")){
-            System.out.println("You are on the correct page " + pageTitle);
-        }else {
-            System.out.println("You are not on the correct page " + Driver.getDriver().getTitle());
-        }
+//        if (Driver.getDriver().getTitle().equals("Web Orders")){
+//            System.out.println("You are on the correct page " + pageTitle);
+//        }else {
+//            System.out.println("You are not on the correct page " + Driver.getDriver().getTitle());
+//        }
+        assertTrue(WebOrderUtility.isAtOrderPage());
 
         // check if username matches
-        if (actualName.contains("Tester")){
-            System.out.println("Username matches " + actualName);
-        }else {
-            System.out.println("Names don't match");
-        }
+//        if (actualName.contains("Tester")){
+//            System.out.println("Username matches " + actualName);
+//        }else {
+//            System.out.println("Names don't match");
+//        }
+        assertTrue(WebOrderUtility.verifyUserName("Tester"));
     }
 
     @Test

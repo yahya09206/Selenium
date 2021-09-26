@@ -96,7 +96,7 @@ public class WebOrderUtility{
      *      3. return `true` if it match username passed, false if not.
      *      */
     public static boolean verifyUserName(String username){
-        boolean result = false;
+        boolean result;
         WebElement welcomeMsg = Driver.getDriver().findElement(By.xpath("//div[@class='login_info']"));
         if (welcomeMsg.getText().contains("Tester")){
            result = true;
