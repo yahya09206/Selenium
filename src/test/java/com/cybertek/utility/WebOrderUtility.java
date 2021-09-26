@@ -357,6 +357,11 @@ public class WebOrderUtility{
         }else if (radioBtn.equals("American Express")){
             radioBtn.get(2).click();
         }
+
+        // enter payment info
+        Faker faker = new Faker();
+        String cardNum = faker.number().digits(16);
+        String date = "05/2025";
     }
 
 }
