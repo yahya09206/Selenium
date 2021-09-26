@@ -326,7 +326,10 @@ public class WebOrderUtility{
         String street = faker.address().streetAddress();
         String city = faker.address().city();
         String state = faker.address().state();
-        String zipCode = faker.address().zipCode();
+        String zipCode = faker.number().digits(5);
+
+        // enter info into boxes
+        nameBox.sendKeys(name);
     }
 
 }
