@@ -22,7 +22,8 @@ public class PropertyFileReadTest {
         in.close();
 
         // now actually read from the properties file using it's key
-
+        String helloValue = myProperty.getProperty("hello");
+        System.out.println("helloValue = " + helloValue);
 
     }
 }
