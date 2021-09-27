@@ -1,5 +1,6 @@
 package com.cybertek.tests.day10_driver_method_practice_properties;
 
+import com.cybertek.utility.ConfigReader;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileInputStream;
@@ -53,5 +54,12 @@ public class PropertyFileReadTest {
     @Test
     public void testReadingUsingUtilityClass(){
 
+        String webOrderUrl = ConfigReader.read("weborder_url");
+        String userName = ConfigReader.read("weborder_username");
+        String password = ConfigReader.read("weborder_password");
+
+        System.out.println("webOrderUrl = " + webOrderUrl);
+        System.out.println("userName = " + userName);
+        System.out.println("password = " + password);
     }
 }
