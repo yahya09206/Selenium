@@ -2,6 +2,7 @@ package com.cybertek.tests.day10_driver_method_practice_properties;
 
 import com.cybertek.utility.ConfigReader;
 import com.cybertek.utility.TestBase;
+import com.cybertek.utility.WebOrderUtility;
 import org.junit.jupiter.api.Test;
 
 public class SeleniumWithPropertiesTest extends TestBase {
@@ -14,7 +15,7 @@ public class SeleniumWithPropertiesTest extends TestBase {
         System.out.println("ConfigReader.read(\"weborder_username\") = " + ConfigReader.read("weborder_username"));
         System.out.println("ConfigReader.read(\"weborder_password\") = " + ConfigReader.read("weborder_password"));
 
-
+        WebOrderUtility.openWebOrderApp();
 
     }
 
