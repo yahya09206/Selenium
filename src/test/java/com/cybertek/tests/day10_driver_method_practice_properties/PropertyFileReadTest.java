@@ -25,5 +25,10 @@ public class PropertyFileReadTest {
         String helloValue = myProperty.getProperty("hello");
         System.out.println("helloValue = " + helloValue);
 
+        // read the value of key from "message"
+        System.out.println("myProperty.getProperty(\"message\") = " + myProperty.getProperty("message"));
+
+        System.out.println("myProperty.getProperty(\"weborder_url\") = " + myProperty.getProperty("weborder_url"));
+
     }
 }
