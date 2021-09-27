@@ -1,5 +1,6 @@
 package com.cybertek.tests.day09_explicit_wait_singleton_properties;
 
+import com.cybertek.utility.BrowserUtil;
 import com.cybertek.utility.Driver;
 import com.cybertek.utility.WebOrderUtility;
 import org.junit.jupiter.api.AfterEach;
@@ -91,7 +92,8 @@ public class WebOrderFunctionalityTests {
 
     @Test
     public void testOrderFlow(){
-
-        WebOrderUtility.submitAndVerify();
+        WebOrderUtility.calculateTotal("MyMoney", 11);
+        assertTrue(WebOrderUtility.submitAndVerify());
+        BrowserUtil.waitFor(2);
     }
 }

@@ -317,7 +317,7 @@ public class WebOrderUtility{
      *     2.  It should fill up the `Address Information` section of order form
      */
     public static void enterAddressInfo(){
-        selectSideBarTab("Order");
+        //selectSideBarTab("Order");
         // locate input boxes for address
         WebElement nameBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_txtName"));
         nameBox.sendKeys("John Doe");
@@ -329,7 +329,7 @@ public class WebOrderUtility{
         stateBox.sendKeys("WA");
         WebElement zipBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox5"));
         zipBox.sendKeys("98181");
-        BrowserUtil.waitFor(2);
+        //BrowserUtil.waitFor(2);
 
 
     }
@@ -354,7 +354,7 @@ public class WebOrderUtility{
         cardNumberBox.sendKeys(cardNum);
         WebElement expDateBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox1"));
         expDateBox.sendKeys(date);
-        BrowserUtil.waitFor(2);
+        //BrowserUtil.waitFor(2);
 //        if (radio1.equals("Visa")){
 //            BrowserUtil.waitFor(2);
 //            radio1.click();
@@ -381,24 +381,26 @@ public class WebOrderUtility{
         //selectSideBarTab("Order");
         enterAddressInfo();
         enterPaymentInfo();
-        boolean result;
+        boolean result = false;
         // select process button
-        WebElement processBtn = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_InsertButton"));
-        BrowserUtil.waitFor(2);
-        processBtn.click();
+        Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_InsertButton")).click();
 
-        WebElement successMessage = Driver.getDriver().findElement(By.xpath("//strong"));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 2);
+        WebElement successMessage = Driver.getDriver().findElement(By.xpath("//strong[normalize-space(.)='New " +
+                "order has been successfully added.']"));
         String expectedMessage = "New order has been successfully added.";
-        String actualMsg = successMessage.getText();
 
         // check if messages match
-        if (expectedMessage.equals(actualMsg)){
+        if (successMessage.getText().equals(expectedMessage)){
+            System.out.println("Order has been placed");
             result = true;
         }else {
+            System.out.println("Please try again");
             result = false;
         }
 
         return result;
+
 
     }
 
