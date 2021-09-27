@@ -329,6 +329,7 @@ public class WebOrderUtility{
         stateBox.sendKeys("WA");
         WebElement zipBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox5"));
         zipBox.sendKeys("98181");
+        BrowserUtil.waitFor(2);
 
 
     }
@@ -339,16 +340,16 @@ public class WebOrderUtility{
      *     2.  It should fill up the `Payment Information` section of order form
      */
     public static void enterPaymentInfo(){
-        selectSideBarTab("Order");
+        //selectSideBarTab("Order");
 
         // select which radio button
         //List<WebElement> radioBtn = Driver.getDriver().findElements(By.xpath("//input[@type='radio']"));
         WebElement radio1 = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_cardList_0"));
         radio1.click();
-        WebElement radio2 = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_cardList_1"));
-        WebElement radio3 = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_cardList_2"));
-        String cardNum = "4234 5432 3445 4332";
-        String date = "05/2025";
+//        WebElement radio2 = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_cardList_1"));
+//        WebElement radio3 = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_cardList_2"));
+        String cardNum = "4234543234454332";
+        String date = "05/25";
         WebElement cardNumberBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox6"));
         cardNumberBox.sendKeys(cardNum);
         WebElement expDateBox = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_TextBox1"));
@@ -377,10 +378,10 @@ public class WebOrderUtility{
      *     5. Use explicit wait to avoid long wait time if not present.
      */
     public static boolean submitAndVerify(){
-        selectSideBarTab("Order");
+        //selectSideBarTab("Order");
         enterAddressInfo();
         enterPaymentInfo();
-        boolean result = false;
+        boolean result;
         // select process button
         WebElement processBtn = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_InsertButton"));
         BrowserUtil.waitFor(2);
