@@ -31,4 +31,9 @@ public class PropertyFileReadTest {
         System.out.println("myProperty.getProperty(\"weborder_url\") = " + myProperty.getProperty("weborder_url"));
 
     }
+
+    @Test
+    public void testReadWithTryCatch(){
+
+    }
 }
