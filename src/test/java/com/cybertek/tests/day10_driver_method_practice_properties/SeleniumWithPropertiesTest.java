@@ -15,6 +15,7 @@ public class SeleniumWithPropertiesTest extends TestBase {
         System.out.println("ConfigReader.read(\"weborder_password\") = " + ConfigReader.read("weborder_password"));
 
 
+
     }
 
 }
