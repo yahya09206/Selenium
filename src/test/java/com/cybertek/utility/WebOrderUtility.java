@@ -183,7 +183,9 @@ public class WebOrderUtility{
 //        WebElement viewAllProducts = Driver.getDriver().findElement(By.xpath("//a[.='View all products']"));
 //        viewAllProducts.click();
         List<String> result = new ArrayList<>();
-        List<WebElement> allProducts = Driver.getDriver().findElements(By.xpath("//div[@class = 'ProductsTable']"));
+        List<WebElement> allProducts = Driver.getDriver().findElements(By.xpath("//table[@class = " +
+                "'ProductsTable']//tr/td[1]"));
+
         for (WebElement allProduct : allProducts) {
             result.add(allProduct.getText());
         }

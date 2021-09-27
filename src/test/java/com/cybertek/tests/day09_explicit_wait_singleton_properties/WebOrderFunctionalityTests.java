@@ -7,6 +7,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -44,12 +47,15 @@ public class WebOrderFunctionalityTests {
         String expectedHeader = "List of Products";
         assertEquals(actualHeader, expectedHeader);
 
+
+        System.out.println("WebOrderUtility.getAllProducts() = " + WebOrderUtility.getAllProducts());
+
 //        // check if list of orders match
-//        String[] expectedArray = {"MyMoney", "FamilyAlbum", "ScreenSaver"};
-//        List<String> expectedList = Arrays.asList(expectedArray);
-//
-//        List<String> actualList = WebOrderUtility.getAllProducts();
-//        assertEquals(actualList, expectedList);
+        String[] expectedArray = {"MyMoney", "FamilyAlbum", "ScreenSaver"};
+        List<String> expectedList = Arrays.asList(expectedArray);
+
+        List<String> actualList = WebOrderUtility.getAllProducts();
+        assertEquals(actualList, expectedList);
 
 
     }
