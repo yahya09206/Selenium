@@ -2,6 +2,7 @@ package com.cybertek.tests.day09_explicit_wait_singleton_properties;
 
 import com.cybertek.utility.BrowserUtil;
 import com.cybertek.utility.Driver;
+import com.cybertek.utility.TestBase;
 import com.cybertek.utility.WebOrderUtility;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,7 +15,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class WebOrderFunctionalityTests {
+public class WebOrderFunctionalityTests extends TestBase {
     @BeforeEach
     public void setUpAndLogin(){
         WebOrderUtility.openWebOrderApp();
@@ -96,4 +97,5 @@ public class WebOrderFunctionalityTests {
         assertTrue(WebOrderUtility.submitAndVerify());
         BrowserUtil.waitFor(2);
     }
+
 }

@@ -12,6 +12,7 @@ public class Driver {
     // private constructor
     private Driver(){ };
 
+
     // getter with conditional object creation
     public static WebDriver getDriver(){
 
@@ -26,6 +27,19 @@ public class Driver {
         }else {
             // if object already exist then just return it
             return obj;
+        }
+    }
+
+    public static void closeBrowser(){
+
+        // check if there is driver
+        // basically checking if obj is null or not
+        // if not null
+            // quit the browser
+            // make it null, because once quit it can not be used
+        if (obj != null){
+            obj.quit();
+            obj = null;
         }
     }
 
