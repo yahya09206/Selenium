@@ -18,5 +18,11 @@ public class PropertyFileReadTest {
         Properties myProperty = new Properties();
         // Load the FileInputStream into the properties object
         myProperty.load(in);
+        // close the connection by calling close method FileInputStream object
+        in.close();
+
+        // now actually read from the properties file using it's key
+
+
     }
 }
