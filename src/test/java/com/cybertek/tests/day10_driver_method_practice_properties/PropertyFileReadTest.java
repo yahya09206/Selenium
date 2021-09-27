@@ -3,6 +3,7 @@ package com.cybertek.tests.day10_driver_method_practice_properties;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -35,5 +36,10 @@ public class PropertyFileReadTest {
     @Test
     public void testReadWithTryCatch(){
 
+        try {
+            FileInputStream in = new FileInputStream("config.properties");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
