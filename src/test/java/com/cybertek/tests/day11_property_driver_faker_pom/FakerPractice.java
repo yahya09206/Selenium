@@ -12,5 +12,8 @@ public class FakerPractice {
 
         // faker.YourCategory.WhateverAvailable();
         System.out.println("faker.name().fullName() = " + faker.name().fullName());
+
+        // fake book info
+        System.out.println("faker.book().title() = " + faker.book().title());
     }
 }
