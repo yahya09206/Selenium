@@ -15,5 +15,10 @@ public class FakerPractice {
 
         // fake book info
         System.out.println("faker.book().title() = " + faker.book().title());
+
+        // fake phone number
+        System.out.println("faker.phoneNumber().cellPhone() = " + faker.phoneNumber().cellPhone());
+
+        System.out.println("faker.chuckNorris().fact() = " + faker.chuckNorris().fact());
     }
 }
