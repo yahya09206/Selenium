@@ -1,5 +1,6 @@
 package com.cybertek.pages;
 
+import com.cybertek.utility.ConfigReader;
 import com.cybertek.utility.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,5 +35,6 @@ public class WLoginPage {
      * */
     public void goTo(){
 
+        Driver.getDriver().navigate().to(ConfigReader.read("weborder-url"));
     }
 }
