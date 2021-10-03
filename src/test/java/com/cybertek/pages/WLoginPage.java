@@ -7,13 +7,13 @@ import org.openqa.selenium.support.PageFactory;
 
 public class WLoginPage {
 
-    @FindBy(id = "ctl100_MainContent_username")
+    @FindBy(id = "ctl00_MainContent_username")
     public WebElement userNameField;
 
-    @FindBy(name = "ctl100$MainContent$password")
+    @FindBy(name = "ctl00$MainContent$password")
     public WebElement passwordField;
 
-    @FindBy(css = "#ctl100_MainContent_login_button")
+    @FindBy(css = "#ctl00_MainContent_login_button")
     public WebElement loginButton;
 
     // Now we need instruct selenium to start looking for element
