@@ -15,8 +15,9 @@ public class WebOrderPOM_Test extends TestBase {
         WLoginPage loginPage = new WLoginPage();
 
         loginPage.goTo();
-        loginPage.userNameField.sendKeys("Tester");
-        loginPage.passwordField.sendKeys("test");
+//        loginPage.userNameField.sendKeys("Tester");
+//        loginPage.passwordField.sendKeys("test");
+        loginPage.login("Tester", "test");
         loginPage.loginButton.click();
 
         BrowserUtil.waitFor(4);
