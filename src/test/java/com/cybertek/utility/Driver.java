@@ -16,6 +16,7 @@ public class Driver {
     // getter with conditional object creation
     public static WebDriver getDriver(){
 
+        String browserName =
         // check if object is null
         if (obj == null){
             // set up chrome driver
