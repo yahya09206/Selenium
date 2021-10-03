@@ -10,6 +10,7 @@ public class FakerPractice {
 
         Faker faker = new Faker();
 
-
+        // faker.YourCategory.WhateverAvailable();
+        System.out.println("faker.name().fullName() = " + faker.name().fullName());
     }
 }
