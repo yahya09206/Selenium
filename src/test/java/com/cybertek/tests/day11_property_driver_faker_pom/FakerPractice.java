@@ -20,5 +20,9 @@ public class FakerPractice {
         System.out.println("faker.phoneNumber().cellPhone() = " + faker.phoneNumber().cellPhone());
 
         System.out.println("faker.chuckNorris().fact() = " + faker.chuckNorris().fact());
+
+        // what if you want random numbers in specific format like phone number
+        // 111-111-1111
+        System.out.println("faker.numerify(\"###-###-####\") = " + faker.numerify("###-###-####"));
     }
 }
