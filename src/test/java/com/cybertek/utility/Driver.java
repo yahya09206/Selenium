@@ -3,6 +3,7 @@ package com.cybertek.utility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 // Driver utility class to give us single Webdriver instance
 public class Driver {
@@ -14,19 +15,29 @@ public class Driver {
 
 
     // getter with conditional object creation
-    public static WebDriver getDriver(){
+    public static WebDriver getDriver() {
 
-        String browserName =
+        String browserName = ConfigReader.read("browser");
+
         // check if object is null
-        if (obj == null){
-            // set up chrome driver
-            WebDriverManager.chromedriver().setup();
-            obj = new ChromeDriver();
-            obj.manage().window().maximize();
-            // return obj that will be created only once each time
+        if (obj == null) {
+            switch (browserName.toLowerCase()) {
+
+                case "chrome":
+                    WebDriverManager.chromedriver().setup();
+                    obj = new ChromeDriver();
+                    break;
+                case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    obj = new FirefoxDriver();
+                    break;
+                default:
+                    obj = null;
+                    System.out.println("UNKNOWN BROWSER TYPE!!! " + browserName);
+            }
+
             return obj;
-        }else {
-            // if object already exist then just return it
+        } else {
             return obj;
         }
     }
