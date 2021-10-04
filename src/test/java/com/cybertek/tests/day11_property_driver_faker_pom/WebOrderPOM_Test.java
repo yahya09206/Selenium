@@ -45,5 +45,7 @@ public class WebOrderPOM_Test extends TestBase {
         BrowserUtil.waitFor(2);
 
         allOrderPage.unCheckAllButton.click();
+
+        BrowserUtil.waitFor(2);
     }
 }
