@@ -3,9 +3,12 @@ package com.cybertek.tests.day11_property_driver_faker_pom;
 import com.cybertek.pages.WAllOrderPage;
 import com.cybertek.pages.WCommonArea;
 import com.cybertek.pages.WLoginPage;
+import com.cybertek.pages.WOrderPage;
 import com.cybertek.utility.BrowserUtil;
 import com.cybertek.utility.TestBase;
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Keys;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -77,4 +80,46 @@ public class WebOrderPOM_Test extends TestBase {
         commonArea.logoutLink.click();
         BrowserUtil.waitFor(3);
     }
+
+    @Test
+    public void testOrderFlow(){
+
+        WLoginPage loginPage = new WLoginPage();
+        loginPage.goTo();
+        loginPage.login("Tester", "test");
+        // here we are logged in
+
+        WCommonArea commonArea = new WCommonArea();
+        // click view all order tab
+        commonArea.orderTab.click();
+        BrowserUtil.waitFor(2);
+
+        // place order with information
+
+        WOrderPage orderPage = new WOrderPage();
+
+        orderPage.quantityBox.sendKeys(Keys.BACK_SPACE + "10");
+        orderPage.calculateButton.click();
+
+        Faker faker = new Faker() ;
+
+        orderPage.customerNameBox.sendKeys(   faker.name().fullName()  );
+        orderPage.streetBox.sendKeys(   faker.address().streetAddress()    );
+        orderPage.cityBox.sendKeys(   faker.address().cityName()  );
+        orderPage.stateBox.sendKeys(  faker.address().state()  );
+        orderPage.zipBox.sendKeys(  faker.numerify("#####"  ) );
+
+        orderPage.visaRadioButton.click();
+        orderPage.cardNumber.sendKeys( faker.numerify("##################" ) ) ;
+        orderPage.cardDate.sendKeys(faker.numerify("0#/0#"));
+
+        orderPage.processButton.click();
+
+        assertTrue(   orderPage.successMessage.isDisplayed()       );
+
+        BrowserUtil.waitFor(5);
+
+
+    }
+
 }
