@@ -38,7 +38,7 @@ public class WLoginPage {
      * */
     public void goTo(){
 
-        Driver.getDriver().navigate().to(ConfigReader.read("weborder-url"));
+        Driver.getDriver().navigate().to(ConfigReader.read("weborder_url"));
     }
 
     /**
