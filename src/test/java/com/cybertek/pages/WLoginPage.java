@@ -17,6 +17,9 @@ public class WLoginPage {
     @FindBy(css = "#ctl00_MainContent_login_button")
     public WebElement loginButton;
 
+    @FindBy(xpath = "//span[.='Invalid Login or Password.']")
+    public WebElement errorBox;
+
     // Now we need instruct selenium to start looking for element
     // when this constructor is called
     public WLoginPage(){
@@ -51,4 +54,10 @@ public class WLoginPage {
         this.loginButton.click();
 
     }
+
+    /**
+     * Check error message is present if wrong credentials are provided
+     * loginErrorMsg present
+     */
+
 }
