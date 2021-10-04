@@ -1,14 +1,16 @@
 package com.cybertek.pages;
 
+import com.cybertek.utility.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class WCommonArea {
 
     @FindBy(id = "ctl00_logout")
     public WebElement logoutLink;
 
-    @FindBy(id = "View all order")
+    @FindBy(id = "View all orders")
     public WebElement viewAllOrderTab;
 
     @FindBy(id = "View all products")
@@ -18,6 +20,8 @@ public class WCommonArea {
     public WebElement orderTab;
 
 
-
+    public WCommonArea(){
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
 
 }

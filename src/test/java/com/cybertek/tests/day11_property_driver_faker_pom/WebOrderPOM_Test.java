@@ -1,6 +1,7 @@
 package com.cybertek.tests.day11_property_driver_faker_pom;
 
 import com.cybertek.pages.WAllOrderPage;
+import com.cybertek.pages.WCommonArea;
 import com.cybertek.pages.WLoginPage;
 import com.cybertek.utility.BrowserUtil;
 import com.cybertek.utility.TestBase;
@@ -52,5 +53,28 @@ public class WebOrderPOM_Test extends TestBase {
         // print out the size of all headerCells
         System.out.println("allOrderPage.headerCells.size() = " + allOrderPage.headerCells.size());
         assertEquals(13, allOrderPage.headerCells.size());
+    }
+
+    @Test
+    public void testCommonArea(){
+
+        WLoginPage loginPage = new WLoginPage();
+        loginPage.goTo();
+        loginPage.login("Tester", "test");
+        // here we are logged in
+
+        WCommonArea commonArea = new WCommonArea();
+        // click view all order tab
+        commonArea.orderTab.click();
+        BrowserUtil.waitFor(2);
+
+        commonArea.viewAllProductTab.click();
+        BrowserUtil.waitFor(2);
+
+        commonArea.viewAllOrderTab.click();
+        BrowserUtil.waitFor(2);
+
+        commonArea.logoutLink.click();
+        BrowserUtil.waitFor(3);
     }
 }
