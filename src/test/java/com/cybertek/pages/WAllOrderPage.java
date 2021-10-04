@@ -25,4 +25,8 @@ public class WAllOrderPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    // Create a method to loop through all header cells
+    // return true if the headers are as below false if not
+    // Name Product # Date Street City State Zipcode
+
 }

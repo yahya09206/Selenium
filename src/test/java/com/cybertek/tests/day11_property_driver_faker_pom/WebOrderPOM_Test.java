@@ -6,6 +6,7 @@ import com.cybertek.utility.BrowserUtil;
 import com.cybertek.utility.TestBase;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class WebOrderPOM_Test extends TestBase {
@@ -50,5 +51,6 @@ public class WebOrderPOM_Test extends TestBase {
 
         // print out the size of all headerCells
         System.out.println("allOrderPage.headerCells.size() = " + allOrderPage.headerCells.size());
+        assertEquals(13, allOrderPage.headerCells.size());
     }
 }
