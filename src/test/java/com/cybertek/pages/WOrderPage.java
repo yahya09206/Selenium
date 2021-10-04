@@ -1,21 +1,60 @@
 package com.cybertek.pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class WOrderPage {
 
-    public WebElement header;
+    @FindBy(xpath = "//h2[normalize-space(.)='Order']")
+    public WebElement header ;
 
-    public WebElement productDropdown;
+    @FindBy(id="ctl00_MainContent_fmwOrder_ddlProduct")
+    public WebElement productDropdown ;
 
-    public WebElement quantityBox;
+    @FindBy(id="ctl00_MainContent_fmwOrder_txtQuantity")
+    public WebElement quantityBox ;
 
-    public WebElement priceBox;
+    @FindBy(id="ctl00_MainContent_fmwOrder_txtUnitPrice")
+    public WebElement priceBox ;
 
-    public WebElement discountBox;
+    @FindBy(id="ctl00_MainContent_fmwOrder_txtDiscount")
+    public WebElement discountBox ;
 
-    public WebElement totalBox;
+    @FindBy(id="ctl00_MainContent_fmwOrder_txtTotal")
+    public WebElement totalBox ;
 
-    public WebElement calculateButton;
+    @FindBy(css="input[type='submit'][value='Calculate']")
+    public WebElement calculateButton ;
+
+    @FindBy(id="ctl00_MainContent_fmwOrder_txtName")
+    public WebElement customerNameBox ;
+
+    @FindBy(id="ctl00_MainContent_fmwOrder_TextBox2")
+    public WebElement streetBox ;
+
+    @FindBy(id="ctl00_MainContent_fmwOrder_TextBox3")
+    public WebElement cityBox ;
+
+    @FindBy(id="ctl00_MainContent_fmwOrder_TextBox4")
+    public WebElement stateBox ;
+
+    @FindBy(id="ctl00_MainContent_fmwOrder_TextBox5")
+    public WebElement zipBox ;
+
+    @FindBy(id="ctl00_MainContent_fmwOrder_cardList_0")
+    public WebElement visaRadioButton ;
+
+    @FindBy(id="ctl00_MainContent_fmwOrder_TextBox6")
+    public WebElement cardNumber ;
+
+    @FindBy(id="ctl00_MainContent_fmwOrder_TextBox1")
+    public WebElement cardDate ;
+
+    @FindBy(id="ctl00_MainContent_fmwOrder_InsertButton")
+    public WebElement processButton ;
+
+    @FindBy(xpath =" //strong[normalize-space(.)='New order has been successfully added.']")
+    public WebElement successMessage ;
+
 
 }
