@@ -57,7 +57,11 @@ public class WLoginPage {
 
     /**
      * Check error message is present if wrong credentials are provided
-     * loginErrorMsg present
+     * loginErrorMsg present simple return the result of isDisplayed method call
      */
+    public boolean loginErrorMsgPresent(){
+
+        return this.errorBox.isDisplayed();
+    }
 
 }
