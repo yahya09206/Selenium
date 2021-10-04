@@ -10,13 +10,13 @@ public class WCommonArea {
     @FindBy(id = "ctl00_logout")
     public WebElement logoutLink;
 
-    @FindBy(id = "View all orders")
+    @FindBy(linkText = "View all orders")
     public WebElement viewAllOrderTab;
 
-    @FindBy(id = "View all products")
+    @FindBy(linkText = "View all products")
     public WebElement viewAllProductTab;
 
-    @FindBy(id = "Order")
+    @FindBy(linkText = "Order")
     public WebElement orderTab;
 
 
