@@ -1,7 +1,9 @@
 package com.cybertek.pages;
 
+import com.cybertek.utility.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class WAllOrderPage {
 
@@ -14,5 +16,8 @@ public class WAllOrderPage {
     @FindBy(id = "ctl00_MainContent_btnUncheckAll")
     public WebElement unCheckAllButton;
 
+    public WAllOrderPage(){
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
 
 }
