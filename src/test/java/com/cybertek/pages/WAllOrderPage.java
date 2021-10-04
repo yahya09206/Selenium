@@ -5,11 +5,13 @@ import org.openqa.selenium.support.FindBy;
 
 public class WAllOrderPage {
 
-    @FindBy
+    @FindBy(xpath = "//h2[normalize-space(.) = 'List of All Orders']")
     public WebElement header;
 
+    @FindBy(id = "ctl00_MainContent_btnCheckAll")
     public WebElement checkAllButton;
 
+    @FindBy(id = "ctl00_MainContent_btnUncheckAll")
     public WebElement unCheckAllButton;
 
 
