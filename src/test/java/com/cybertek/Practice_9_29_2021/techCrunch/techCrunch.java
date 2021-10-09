@@ -42,6 +42,11 @@ public class techCrunch extends TestBase {
         //- Verify the links within the news content
         latestNews.get(2).click();
         String expectedTitle = Driver.getDriver().findElement(By.xpath("//h1")).getText();
+        System.out.println("expectedTitle = " + expectedTitle);
+        String actualTitle = Driver.getDriver().getTitle();
+        System.out.println("actualTitle = " + actualTitle);
+
+        Assertions.assertTrue(actualTitle.contains(expectedTitle));
 
     }
 }
