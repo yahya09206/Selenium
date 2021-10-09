@@ -27,9 +27,8 @@ public class techCrunch extends TestBase {
         //dynamic for img
         //article[@class='post-block post-block--image post-block--unread'][3]//img
 
-        for (int i = 0; i < latestNews.size(); i++){
-            String authorLocator = "// article[@class='post-block post-block--image post-block--unread']["+i+"]//a" +
-                "[contains(@aria-label,'Posts by')]";
+        for (int i = 1; i <= latestNews.size(); i++){
+            String authorLocator = "// article[@class='post-block post-block--image post-block--unread']["+i+"]//a[contains(@aria-label,'Posts by')]";
             WebElement author = Driver.getDriver().findElement(By.xpath(authorLocator));
             Assertions.assertTrue(author.isDisplayed());
 
