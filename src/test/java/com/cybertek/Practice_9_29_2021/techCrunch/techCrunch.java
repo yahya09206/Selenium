@@ -35,9 +35,12 @@ public class techCrunch extends TestBase {
             String imgLocator = "//article[@class='post-block post-block--image post-block--unread']["+i+"]//img";
             WebElement image = Driver.getDriver().findElement(By.xpath(imgLocator));
             Assertions.assertTrue(image.isDisplayed());
-
         }
 
+        //3- Click one of the news from "The Latest News " list to reach the full content
+//        - Verify the browser title is the same with the news title
+        //- Verify the links within the news content
+        latestNews.get(2).click();
 
     }
 }
