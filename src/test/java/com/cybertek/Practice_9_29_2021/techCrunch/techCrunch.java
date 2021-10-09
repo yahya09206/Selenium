@@ -52,5 +52,9 @@ public class techCrunch extends TestBase {
         List<WebElement> allLinksFromArticle = Driver.getDriver().findElements(By.xpath("//div[@class='article-content']//a"));
         Assertions.assertTrue(allLinksFromArticle.size() > 0);
 
+        for (WebElement eachLink : allLinksFromArticle) {
+            System.out.println("eachLink.getAttribute(\"href\") = " + eachLink.getAttribute("href"));
+        }
+
     }
 }
