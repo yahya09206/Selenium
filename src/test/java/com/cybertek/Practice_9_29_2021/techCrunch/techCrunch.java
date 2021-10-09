@@ -34,6 +34,8 @@ public class techCrunch extends TestBase {
             Assertions.assertTrue(author.isDisplayed());
 
             String imgLocator = "//article[@class='post-block post-block--image post-block--unread']["+i+"]//img";
+            WebElement image = Driver.getDriver().findElement(By.xpath(imgLocator));
+            Assertions.assertTrue(image.isDisplayed());
 
         }
 
