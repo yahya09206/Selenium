@@ -20,5 +20,9 @@ public class techCrunch extends TestBase {
         List<WebElement> latestNews = Driver.getDriver().findElements(By.xpath("//article[@class='post-block post-block--image post-block--unread']"));
         System.out.println("latestNews.size() = " + latestNews.size());
 
+        // dynamic for author
+
+        // dynamic for image
+
     }
 }
