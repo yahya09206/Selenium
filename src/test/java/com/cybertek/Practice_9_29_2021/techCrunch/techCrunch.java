@@ -3,6 +3,7 @@ package com.cybertek.Practice_9_29_2021.techCrunch;
 import com.cybertek.utility.ConfigReader;
 import com.cybertek.utility.Driver;
 import com.cybertek.utility.TestBase;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -27,7 +28,9 @@ public class techCrunch extends TestBase {
         //article[@class='post-block post-block--image post-block--unread'][3]//img
 
         for (int i = 0; i < latestNews.size(); i++){
-            String authorLocators = "";
+            String authorLocator = "// article[@class='post-block post-block--image post-block--unread'][4]//a[contains(@aria-label,'Posts by')]";
+            WebElement author = Driver.getDriver().findElement(By.xpath(authorLocator));
+            Assertions.assertTrue(author.isDisplayed());
         }
 
 
