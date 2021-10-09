@@ -49,7 +49,8 @@ public class techCrunch extends TestBase {
         Assertions.assertTrue(actualTitle.contains(expectedTitle));
 
         // Verify the links within the news content
-        Driver.getDriver().findElements(By.xpath("//div[@class='article-content']//a"));
+        List<WebElement> allLinksFromArticle = Driver.getDriver().findElements(By.xpath("//div[@class='article-content']//a"));
+        Assertions.assertTrue(allLinksFromArticle.size() > 0);
 
     }
 }
