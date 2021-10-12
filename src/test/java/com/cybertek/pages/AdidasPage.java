@@ -65,4 +65,10 @@ public class AdidasPage {
 
         return price;
     }
+
+    public int removeProduct(String product){
+
+        // Dynamic locator for product in cartPage
+        //
+    }
 }
