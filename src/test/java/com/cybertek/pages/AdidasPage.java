@@ -38,6 +38,10 @@ public class AdidasPage {
 
         String priceString = purchasePrice.getText();
         System.out.println("priceString = " + priceString);
+        String[] priceArray = priceString.split(" ");
+        System.out.println("priceArray = " + priceArray);
+        priceString = priceArray[0].substring(1);
+        int price = Integer.parseInt(priceString);
 
         // add to cart
         addCart.click();
