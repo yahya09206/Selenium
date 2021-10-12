@@ -19,6 +19,16 @@ public class Adidas extends TestBase {
         expectedPrice += adidasPage.addProduct("Laptops", "Sony vaio i5");
         System.out.println("expectedPrice = " + expectedPrice);
 
+        //• Navigate to "Phones" → "Samsung galaxy s6" and click on "Add to cart". Accept pop up confirmation.
+        expectedPrice+=adidasPage.addProduct("Phones","Samsung galaxy s6");
+        System.out.println("expectedPrice = " + expectedPrice);
+
+        //• Navigate to "Monitors" → "Apple monitor 24" and click on "Add to cart". Accept pop up confirmation.
+        expectedPrice+=adidasPage.addProduct("Monitors","Apple monitor 24");
+        System.out.println("expectedPrice = " + expectedPrice);
+
+
+
 
     }
 }
