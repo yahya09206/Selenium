@@ -11,8 +11,5 @@ public class Adidas extends TestBase {
     public void adidas(){
 
         Driver.getDriver().get(ConfigReader.read("adidas"));
-
-        // Dynamic categories locator //a[.='"+category+"']
-        // Dynamic products locator //a[normalize-space(.)='"+product+"']
     }
 }
