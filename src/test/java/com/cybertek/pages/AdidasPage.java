@@ -20,4 +20,8 @@ public class AdidasPage {
 
     @FindBy(xpath = "(//a[@class='nav-link'])[1]")
     public WebElement homeLink;
+
+    public void addProduct(String category){
+
+    }
 }
