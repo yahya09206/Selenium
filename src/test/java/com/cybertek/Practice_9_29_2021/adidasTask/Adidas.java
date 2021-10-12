@@ -32,7 +32,9 @@ public class Adidas extends TestBase {
         expectedPrice -=adidasPage.removeProduct("Apple monitor 24");
         System.out.println("expectedPrice = " + expectedPrice);
 
+        adidasPage.placeOrder.click();
 
+        adidasPage.fillForm();
 
     }
 }
