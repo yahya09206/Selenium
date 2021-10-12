@@ -26,7 +26,7 @@ public class AdidasPage {
     @FindBy(xpath = "(//a[@class='nav-link'])[1]")
     public WebElement homeLink;
 
-    public void addProduct(String category, String product){
+    public int addProduct(String category, String product){
 
         // Dynamic categories locator //a[.='"+category+"']
         // Dynamic products locator //a[normalize-space(.)='"+product+"']

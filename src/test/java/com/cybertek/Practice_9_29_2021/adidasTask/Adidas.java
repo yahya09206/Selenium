@@ -15,6 +15,10 @@ public class Adidas extends TestBase {
 
         AdidasPage adidasPage = new AdidasPage();
 
-        adidasPage.addProduct("Laptops", "Sony vaio i5");
+        int expectedPrice = 0;
+        expectedPrice += adidasPage.addProduct("Laptops", "Sony vaio i5");
+        System.out.println("expectedPrice = " + expectedPrice);
+
+
     }
 }
