@@ -123,10 +123,11 @@ public class AdidasPage {
     }
 
     public void fillForm() {
-        Faker faker = new Faker();
+        Faker faker=new Faker();
 
         name.sendKeys(faker.name().fullName());
-        country.sendKeys(faker.);
+        country.sendKeys(faker.country().name());
+        city.sendKeys(faker.country().capital());
         card.sendKeys(faker.finance().creditCard());
         month.sendKeys(String.valueOf(faker.number().numberBetween(1, 12)));
         year.sendKeys(String.valueOf(faker.number().numberBetween(2022, 2030)));
