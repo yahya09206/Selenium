@@ -12,5 +12,7 @@ public class AdidasPage {
     }
 
     @FindBy(xpath = "//h3[@class='price-container']")
-    WebElement
+    public WebElement purchasePrice;
+
+
 }
