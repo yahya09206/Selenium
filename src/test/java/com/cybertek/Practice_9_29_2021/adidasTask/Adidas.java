@@ -15,5 +15,6 @@ public class Adidas extends TestBase {
 
         AdidasPage adidasPage = new AdidasPage();
 
+        adidasPage.addProduct("Laptops", "Sony vaio 15");
     }
 }
