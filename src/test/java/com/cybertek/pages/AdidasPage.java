@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AdidasPage {
 
@@ -28,10 +30,10 @@ public class AdidasPage {
 
         // Dynamic categories locator //a[.='"+category+"']
         // Dynamic products locator //a[normalize-space(.)='"+product+"']
-        Driver.getDriver().findElement(By.xpath("//a[.='\"+category+\"']")).click();
+        Driver.getDriver().findElement(By.xpath("//a[.='"+category+"']")).click();
         BrowserUtil.waitFor(1);
 
-        Driver.getDriver().findElement(By.xpath("//a[normalize-space(.)='\"+product+\"']")).click();
+        Driver.getDriver().findElement(By.xpath("//a[normalize-space(.)='"+product+"']")).click();
         BrowserUtil.waitFor(1);
 
         String priceString = purchasePrice.getText();
@@ -39,6 +41,10 @@ public class AdidasPage {
 
         // add to cart
         addCart.click();
+
+        // Explicit Wait
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 5);
+        wait.until(ExpectedConditions.alertIsPresent());
 
         // Alert
         Alert alert = Driver.getDriver().switchTo().alert();
