@@ -2,6 +2,7 @@ package com.cybertek.pages;
 
 import com.cybertek.utility.BrowserUtil;
 import com.cybertek.utility.Driver;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -36,6 +37,14 @@ public class AdidasPage {
         String priceString = purchasePrice.getText();
         System.out.println("priceString = " + priceString);
 
+        // add to cart
+        addCart.click();
 
+        // Alert
+        Alert alert = Driver.getDriver().switchTo().alert();
+        alert.accept();
+
+        // Go back home
+        homeLink.click();
     }
 }
