@@ -69,9 +69,9 @@ public class AdidasPage {
     public int removeProduct(String product){
 
         // Dynamic locator for product in cartPage
-        // tbody//td[.='"+product+"'/../td[3]
+        // tbody//td[.='"+product+"']/../td[3]
 
         // Dynamic locator for Delete button
-
+        // tbody//[.='"+product+"']//..td/a
     }
 }
