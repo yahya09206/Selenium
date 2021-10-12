@@ -28,6 +28,8 @@ public class Adidas extends TestBase {
         System.out.println("expectedPrice = " + expectedPrice);
 
 
+        adidasPage.cart.click();
+
 
 
     }
