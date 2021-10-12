@@ -10,6 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.Arrays;
+
 public class AdidasPage {
 
     public AdidasPage() {
@@ -40,7 +42,7 @@ public class AdidasPage {
         String priceString = purchasePrice.getText();
         System.out.println("priceString = " + priceString);
         String[] priceArray = priceString.split(" ");
-        System.out.println("priceArray = " + priceArray);
+        System.out.println("Arrays.toString(priceArray) = " + Arrays.toString(priceArray));
         priceString = priceArray[0].substring(1);
         int price = Integer.parseInt(priceString);
 
