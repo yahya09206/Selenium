@@ -29,6 +29,8 @@ public class Adidas extends TestBase {
 
 
         adidasPage.cart.click();
+        expectedPrice -=adidasPage.removeProduct("Apple monitor 24");
+        System.out.println("expectedPrice = " + expectedPrice);
 
 
 
