@@ -17,4 +17,7 @@ public class AdidasPage {
     //a[.='Add to cart']
     @FindBy(xpath = "//a[.='Add to cart']")
     public WebElement addCart;
+
+    @FindBy(xpath = "(//a[@class='nav-link'])[1]")
+    public WebElement homeLink;
 }
