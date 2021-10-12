@@ -30,6 +30,12 @@ public class AdidasPage {
         Driver.getDriver().findElement(By.xpath("//a[.='\"+category+\"']")).click();
         BrowserUtil.waitFor(1);
 
+        Driver.getDriver().findElement(By.xpath("//a[normalize-space(.)='\"+product+\"']")).click();
+        BrowserUtil.waitFor(1);
+
+        String priceString = purchasePrice.getText();
+        System.out.println("priceString = " + priceString);
+
 
     }
 }
