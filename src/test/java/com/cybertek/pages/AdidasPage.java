@@ -67,11 +67,22 @@ public class AdidasPage {
     }
 
     public int removeProduct(String product){
+        BrowserUtil.waitFor(1);
 
         // Dynamic locator for product in cartPage
-        // tbody//td[.='"+product+"']/../td[3]
+        //tbody//td[.='"+product+"']/../td[3]
+        String priceString = Driver.getDriver().findElement(By.xpath("//tbody//td[.='" + product + "']/../td[3]")).getText();
+        int price = Integer.parseInt(priceString);
+        System.out.println("price = " + price);
 
-        // Dynamic locator for Delete button
-        // tbody//[.='"+product+"']//..td/a
+        //dynamic locator for Delete button
+        WebElement deleteButton = Driver.getDriver().findElement(By.xpath("//tbody//td[.='" + product + "']/../td/a"));
+        deleteButton.click();
+
+        BrowserUtil.waitFor(3);
+
+        //tbody//[.='"+product+"']/../td/a
+
+        return price;
     }
 }
